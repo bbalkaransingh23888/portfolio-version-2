@@ -74,6 +74,9 @@ const $resume = $('<button>').text('Resume').click(function(){
     onclick=window.open('https://drive.google.com/file/d/1vWg65iWrUhfqduGKU9OnHacWUcYKBj-A/view?usp=sharing', '_blank');
 });
 
+$aboutMeHeading.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
+$aboutMeContent.css('text-align','center').css('font-size','24px');
+
 //Append About Me elements to HTML file - Created using jQuery
 $('body').append($aboutMeDiv);
 $aboutMeDiv.append($aboutMeHeading);
@@ -92,6 +95,8 @@ const $gitHub = $('<button>').text('GitHub').click(function(){
     window.open('https://github.com/bbalkaransingh23888', '_blank')
 });
 
+$sitesHeader.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
+
 //Append the sites div elements to the site HTML
 $('body').append($sitesDiv);
 $sitesDiv.append($sitesHeader);
@@ -107,9 +112,11 @@ const $languageHeader = $('<h4>').addClass('language-header').text('Languages');
 
 //Project section
 //projects variables
-const $projectHeader = $('<h2>').text('Projects');
+const $projectHeader = $('<h2>').text('Projects').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 const $projectSection = $('<div>').addClass('projects-section');
 const $projects = $('<div>').addClass('projects');
+
+$projectHeader.css('font-size','50px')
 
 //Append project section to the body, then projects to project section
 $('body').append($projectSection);
@@ -178,6 +185,8 @@ const $email = $('<p>').text('email: bbalkaransingh2223@gmail.com');
 const $phone = $('<p>').text('phone: (646)265-4025');
 const $iframe = $('<iframe>').attr('src', 'https://docs.google.com/forms/d/e/1FAIpQLSee9b-FvwXLN_jM3DMPBGWGj7EtE_ax6LHY5YQx1eAvsb_NAQ/viewform?embedded=true').css('frameboder','0').css('marginheight','0').css('marginwidth','0').text('Loading...');
 
+$contactHeader.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
+
 //Append Contact Section Elements to the HTMl Site
 $('body').append($contactForm);
 $($contactForm).append($contactHeader);
@@ -198,10 +207,27 @@ $socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
 
 
 // CSS Variables
-$('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif");
+$('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif").css('padding','0').css('margin','0').css('height','0').css('position','relative');
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center');
+$navDiv.css('text-align','right').css('color','#C0C0C0').css('display','flex').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
+$ul.css('font-size','smaller').css('align-content','center').css('margin','10px');
+$li.css('transition','background-color .5s, color .5s').hover(function(){
+    $(this).css('background-color','#dc143c').css('color','white');
+});
+$li2.css('transition','background-color .5s, color .5s').hover(function(){
+    $(this).css('background-color','#dc143c').css('color','white');
+});
+$li3.css('transition','background-color .5s, color .5s').hover(function(){
+    $(this).css('background-color','#dc143c').css('color','white');
+});
+$li4.css('transition','background-color .5s, color .5s').hover(function(){
+    $(this).css('background-color','#dc143c').css('color','white');
+});
+$li5.css('transition','background-color .5s, color .5s').hover(function(){
+    $(this).css('background-color','#dc143c').css('color','white');
+});
 $resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center');
 $linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c');
 $gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c');
