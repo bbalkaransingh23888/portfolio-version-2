@@ -1,3 +1,4 @@
+// Check if jQuery was linked properly
 // if (typeof $ == undefined) {
 //     console.log("not linked properly")
 // }else{
@@ -110,3 +111,13 @@ fetch(url)
             $('.projects-section').append($projectDiv)
         })
     }
+
+
+// CSS Variables
+$('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif");
+$h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
+$profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
+$introP.css('text-align', 'center');
+
+
+//CSS Dark Mode Function
