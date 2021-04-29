@@ -23,7 +23,7 @@ $($welcomeDiv).append($introP);
 //Nav Variables
 const $navDiv = $('<div>').addClass('menu');
 const $ul = $('<ul>');
-const $hamburger = $('<div>').addClass('hamburger');
+// const $hamburger = $('<div>').addClass('hamburger');
 
 //appending elements to navigation div
 $('body').append($navDiv);
@@ -47,25 +47,66 @@ const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(
 });
 
 //Creation of the Hamburger menu
-$('.hamburger').text('☰').append($ul)
-let show = false;
-const showMenu = (event) => {
-    if (show) {
-        $('li').each(function(index) {
-            $(this).css('display', 'none')
-        })
-        show = false
-    } else {
-        $('li').each(function(index) {
-            $(this).css('display', 'flex')
-        })
-        show = true;
-    }
-}
-$hamburger.on('click', showMenu)
+// $('.hamburger')
+// let show = false;
+// const showMenu = (event) => {
+//     if (show) {
+//         $('li').each(function(index) {
+//             $(this).css('display', 'none')
+//         })
+//         show = false
+//     } else {
+//         $('li').each(function(index) {
+//             $(this).css('display', 'flex')
+//         })
+//         show = true;
+//     }
+// }
+// $hamburger.on('click', showMenu)
 
+//About Me Section
+//About Me Variables
+const $aboutMeDiv = $('<div>').addClass('aboutMe');
+const $aboutMeHeading = $('<h2>').text('About Me');
+const $aboutMeContent = $('<p>').text('I am a self-starting, fast-learning videogame nerd looking to jumpstart a software engineering career following stints in sales and finance. I am analytical yet creative and a versatile team-player. I am ambitious, hard-working, enjoy acquiring new skills, and possess strong problem solving skills. I strive to be the best version of myself, to be better than my previous self, and derive joy from the sense of accomplishment of completing a task. I am a health-nut who enjoys travelling; sports; nature; and my family, friends, and dog.');
+const $resume = $('<button>').text('Resume').click(function(){
+    window.alert('You clicked on my Resume!')
+    onclick=window.open('https://drive.google.com/file/d/1vWg65iWrUhfqduGKU9OnHacWUcYKBj-A/view?usp=sharing', '_blank');
+});
+
+//Append About Me elements to HTML file - Created using jQuery
+$('body').append($aboutMeDiv);
+$aboutMeDiv.append($aboutMeHeading);
+$aboutMeDiv.append($aboutMeContent);
+$aboutMeDiv.append($resume);
+
+
+//Sites Section
+//Sites Variables
+const $sitesDiv = $('<div>').addClass('sites');
+const $sitesHeader = $('<h2>').text('Sites');
+const $linkedIn = $('<button>').text('LinkedIn').click(function(){
+    window.open('https://www.linkedin.com/in/brandon-balkaransingh23/', '_blank');
+});
+const $gitHub = $('<button>').text('GitHub').click(function(){
+    window.open('https://github.com/bbalkaransingh23888', '_blank')
+});
+
+//Append the sites div elements to the site HTML
+$('body').append($sitesDiv);
+$sitesDiv.append($sitesHeader);
+$sitesDiv.append($linkedIn);
+$sitesDiv.append($gitHub);
+
+//Skills Section
+//Skills Variables
 
 //Project section
+//projects variables
+const $projectHeader = $('<h2>').text('Projects');
+const $projectSection = $('<div>').addClass('projects-section');
+const $projects = $('<div>').addClass('projects');
+
 const url = 'https://spreadsheets.google.com/feeds/list/1-YSo0tilzPyTV_wXSQqfx_MjTEpFxqZ6dzO3xqVfkAA/od6/public/values?alt=json'
 //takes our url and get json data from it
 fetch(url)
@@ -94,23 +135,48 @@ fetch(url)
     // function that generates HTML elements for each of the rows on your google sheet (i.e., each of the elements in your projects array)
   const app = (data) => {
         const createProjectElement = (project) => {
-           const $div11 = $('<div>')
-            $div11.append($('<h4>').attr('class', 'project-header').text(project.title))
-            $div11.append($('<img>').attr('src', project.image).addClass('project-images'))
-            $div11.append($('<button>').on("click", function() {
+           const $projectDiv2 = $('<div>')
+            $projectDiv2.append($('<h4>').attr('class', 'project-header').text(project.title))
+            $projectDiv2.append($('<img>').attr('src', project.image).addClass('project-images'))
+            $projectDiv2.append($('<button>').on("click", function() {
                 onclick=window.open(project.url, '_blank');
             }).text('Site').addClass('project-link'))
-            $div11.append($('<button>').on("click", function() {
+            $projectDiv2.append($('<button>').on("click", function() {
                 onclick=window.open(project.repo, '_blank');
             }).text('Repo').addClass('project-repo'))
-            $div11.append($('<p>').text(project.description)).addClass('project-description')
-            return $div11
+            $projectDiv2.append($('<p>').text(project.description)).addClass('project-description')
+            return $projectDiv2
         }
         data.forEach( project => {
-            const $projectDiv = createProjectElement(project)
-            $('.projects-section').append($projectDiv)
+            const $projectDiv3 = createProjectElement(project)
+            $('.projects-section').append($projectDiv3)
         })
     }
+
+//Contact Section
+const $contactForm = $('<form>').addClass('contactMe');
+const $contactHeader = $('<h2>').text('Contact Me');
+const $email = $('<p>').text('email: bbalkaransingh2223@gmail.com');
+const $phone = $('<p>').text('phone: (646)265-4025');
+const $iframe = $('<iframe>').attr('src', 'https://docs.google.com/forms/d/e/1FAIpQLSee9b-FvwXLN_jM3DMPBGWGj7EtE_ax6LHY5YQx1eAvsb_NAQ/viewform?embedded=true').css('frameboder','0').css('marginheight','0').css('marginwidth','0').text('Loading...');
+
+//Append Contact Section Elements to the HTMl Site
+$('body').append($contactForm);
+$($contactForm).append($contactHeader);
+$($contactForm).append($email);
+$($contactForm).append($phone);
+$($contactForm).append($iframe);
+
+
+//Footer
+// const $footer = $('<footer>');
+// const $socialMediaP = $('<p>');
+// const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank').addClass('fsite');
+// // const $linkedinFooterSymbol = $('<i>').addClass('fab fa-linkedin');
+// ('body').append($footer).addClass('footer');
+// $footer.append($socialMediaP);
+// $socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
+
 
 
 // CSS Variables
@@ -119,5 +185,9 @@ $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'bl
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center');
 
+
+
+// $footer.css('background-color','black').css('border','3px solid gold').css('height', '50px').css('position', 'relative').css('bottom', '0').css('left', '0').css('right','0');
+// $socialMediaP.css('text-align', 'left');
 
 //CSS Dark Mode Function
