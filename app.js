@@ -4,11 +4,18 @@
 //     console.log("linked properly")
 // }
 
+//Welcome section
+const $h1 = $('<h1>').addClass('welcomeMessage').text("Welcome to my Portfolio Site!")
 const $welcomeDiv = $('<div>').addClass('welcome')
-$div.prepend("body")
+const $profilePic = $('<img>').attr('src', 'urlToIhttps://res.cloudinary.com/lonewolf23/image/upload/v1619376681/IMG_3219_ohaedw.png" alt="my profile picmage').attr('alt', 'my profile pic')
+
+$welcomeDiv.prepend("body")
+$h1.append($welcomeDiv)
+$profilePic.append($profilePic)
 
 
 
+//Project section
 const url = 'https://spreadsheets.google.com/feeds/list/1-YSo0tilzPyTV_wXSQqfx_MjTEpFxqZ6dzO3xqVfkAA/od6/public/values?alt=json'
 //takes our url and get json data from it
 fetch(url)
