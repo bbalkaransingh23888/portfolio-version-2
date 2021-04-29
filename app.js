@@ -34,7 +34,7 @@ const $li = $('<li>'); $li.text('About me '); $ul.append($li); $li.click(functio
     window.scrollBy(0,480)
 }); 
 const $li2 = $('<li>'); $li2.text(' Sites '); $ul.append($li2); $li2.click(function() {
-     window.scrollBy(0,1111)
+    window.scrollBy(0,1111)
 });
 const $li3 = $('<li>'); $li3.text(' Skills'); $ul.append($li3); $li3.click(function() {
     window.scrollBy(0,1888)
@@ -106,6 +106,11 @@ $sitesDiv.append($gitHub);
 const $projectHeader = $('<h2>').text('Projects');
 const $projectSection = $('<div>').addClass('projects-section');
 const $projects = $('<div>').addClass('projects');
+
+//Append project section to the body, then projects to project section
+$('body').append($projectSection);
+$projectSection.append($projectHeader);
+$projectSection.append($projects);
 
 const url = 'https://spreadsheets.google.com/feeds/list/1-YSo0tilzPyTV_wXSQqfx_MjTEpFxqZ6dzO3xqVfkAA/od6/public/values?alt=json'
 //takes our url and get json data from it
