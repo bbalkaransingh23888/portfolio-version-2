@@ -100,6 +100,10 @@ $sitesDiv.append($gitHub);
 
 //Skills Section
 //Skills Variables
+const $skillsDiv = $('<div>').addClass('skills');
+const $languageHeader = $('<h4>').addClass('language-header').text('Languages');
+
+
 
 //Project section
 //projects variables
@@ -140,16 +144,23 @@ fetch(url)
     // function that generates HTML elements for each of the rows on your google sheet (i.e., each of the elements in your projects array)
   const app = (data) => {
         const createProjectElement = (project) => {
-           const $projectDiv2 = $('<div>')
-            $projectDiv2.append($('<h4>').attr('class', 'project-header').text(project.title))
-            $projectDiv2.append($('<img>').attr('src', project.image).addClass('project-images'))
-            $projectDiv2.append($('<button>').on("click", function() {
+            const $projectDiv2 = $('<div>');
+            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px');
+            const $projectImage = $('<img>').attr('src', project.image).addClass('project-images').css('width','80%').css('display','flex').css('margin','5%');
+            const $projectLink = $('<button>').on("click", function() {
                 onclick=window.open(project.url, '_blank');
-            }).text('Site').addClass('project-link'))
-            $projectDiv2.append($('<button>').on("click", function() {
+            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('margin-left','20px').css('margin-right','20px'); 
+            const $projectRepo = $('<button>').on("click", function() {
                 onclick=window.open(project.repo, '_blank');
-            }).text('Repo').addClass('project-repo'))
-            $projectDiv2.append($('<p>').text(project.description)).addClass('project-description')
+            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('margin-left','20px').css('margin-right','20px');
+            const $projectDescription = $('<p>').text(project.description).addClass('project-description').css('font-size','13px').css('color','black');
+            
+            $projectDiv2.append($projectHeader2);
+            $projectDiv2.append($projectImage);
+            $projectDiv2.append($projectLink);
+            $projectDiv2.append($projectRepo);
+            $projectDiv2.append($projectDescription);
+            
             return $projectDiv2
         }
         data.forEach( project => {
@@ -157,6 +168,8 @@ fetch(url)
             $('.projects-section').append($projectDiv3)
         })
     }
+
+
 
 //Contact Section
 const $contactForm = $('<form>').addClass('contactMe');
@@ -174,13 +187,13 @@ $($contactForm).append($iframe);
 
 
 //Footer
-// const $footer = $('<footer>');
-// const $socialMediaP = $('<p>');
-// const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank').addClass('fsite');
-// // const $linkedinFooterSymbol = $('<i>').addClass('fab fa-linkedin');
-// ('body').append($footer).addClass('footer');
-// $footer.append($socialMediaP);
-// $socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
+const $footer = $('<footer>').addClass('footer');
+const $socialMediaP = $('<p>');
+const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank');
+//const $linkedinFooterSymbol = $('<i>').addClass('fab fa-linkedin');
+$('body').append($footer);
+$footer.append($socialMediaP);
+$socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
 
 
 
@@ -189,12 +202,13 @@ $('body').css('background-color','#C0C0C0').css('color','black').css('font-famil
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center');
-$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c');
+$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center');
 $linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c');
 $gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c');
+$iframe.css('width','250px').css('height','400px').css('position','relative').css('margin','0 auto').css('display','inline-flex').css('top','200px').css('left','50%').css('-ms-transform','translate(-50%,-50%)').css('transform','translate(-50%,-50%)');
+$projectSection.css('display','flex').css('flex-direction','column');
 
-
-// $footer.css('background-color','black').css('border','3px solid gold').css('height', '50px').css('position', 'relative').css('bottom', '0').css('left', '0').css('right','0');
-// $socialMediaP.css('text-align', 'left');
+$footer.css('background-color','black').css('border','3px solid gold').css('height', '50px').css('position', 'relative').css('bottom', '0').css('left', '0').css('right','0');
+$linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
 //CSS Dark Mode Function
