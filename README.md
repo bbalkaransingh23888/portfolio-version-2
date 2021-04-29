@@ -58,8 +58,10 @@ MVP:
 |DOM programming|High|3 Hrs.|3 Hrs.|3 Hrs.|		
 |Grid & Flexbox for CSS|Medium|2 Hrs.|4 Hrs.|4 Hrs.|		
 |Deployed to GitHub Pages|Low|1 Hr.|.5 hr.|.5 hr.|		
-|Basic HTML & CSS|Low|1 Hr.|.5 hr.|.5 hr.|		
-|TOTAL|High|29 Hrs.|24.5 Hrs.|24.5 Hrs.| 		
+|Basic HTML & CSS|Low|1 Hr.|.5 hr.|.5 hr.|
+|Dark Mode and Light Mode|High|4 Hrs.| | |
+|Nothing but jQuery|High|7 Hrs.|||		
+|TOTAL|High|40 Hrs.|24.5 Hrs.|24.5 Hrs.| 		
 
 
 Post-MVP:
@@ -67,4 +69,4 @@ Post-MVP:
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
 |Social Media Links, Images, & Gifs|Low|1 Hr.|1 Hr.|1 Hr.(ongoing)|
-|Indicate New/Featured Projects and Blogs -> Ongoing Projects|Medium|2 Hrs.|n/a|n/a|
+
