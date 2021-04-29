@@ -4,15 +4,64 @@
 //     console.log("linked properly")
 // }
 
-//Welcome section
-const $h1 = $('<h1>').addClass('welcomeMessage').text("Welcome to my Portfolio Site!")
-const $welcomeDiv = $('<div>').addClass('welcome')
-const $profilePic = $('<img>').attr('src', 'urlToIhttps://res.cloudinary.com/lonewolf23/image/upload/v1619376681/IMG_3219_ohaedw.png" alt="my profile picmage').attr('alt', 'my profile pic')
+//Welcome/Intro section
+//Welcome/Intro Variables
+const $h1 = $('<h1>').addClass('welcomeMessage').text("Welcome to my Portfolio Site!");
+const $welcomeDiv = $('<div>').addClass('welcome');
+const $profilePic = $('<img>').attr('src', 'https://res.cloudinary.com/lonewolf23/image/upload/v1619376681/IMG_3219_ohaedw.png').attr('alt', 'my profile pic');
+const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaransingh. I am a Fullstack Software Engineer');
 
-$welcomeDiv.prepend("body")
-$h1.append($welcomeDiv)
-$profilePic.append($profilePic)
+//attaching jQuery created elements to Intro div
+$('body').append($welcomeDiv);
+$($welcomeDiv).append($h1);
+$($welcomeDiv).append($profilePic);
+$($welcomeDiv).append($introP);
 
+
+//Navigation menu - Hamburger for mobile
+//Nav Variables
+const $navDiv = $('<div>').addClass('menu');
+const $ul = $('<ul>');
+const $hamburger = $('<div>').addClass('hamburger');
+
+//appending elements to navigation div
+$('body').append($navDiv);
+$($navDiv).append($ul);
+
+//create the list items that will make up the navigation menu
+const $li = $('<li>'); $li.text('About me '); $ul.append($li); $li.click(function() {
+    window.scrollBy(0,480)
+}); 
+const $li2 = $('<li>'); $li2.text(' Sites '); $ul.append($li2); $li2.click(function() {
+     window.scrollBy(0,1111)
+});
+const $li3 = $('<li>'); $li3.text(' Skills'); $ul.append($li3); $li3.click(function() {
+    window.scrollBy(0,1888)
+});
+const $li4 = $('<li>'); $li4.text(' Projects '); $ul.append($li4); $li4.click(function() {
+    window.scrollBy(0,2388)
+});
+const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(function() {
+    window.scrollBy(0,5100)
+});
+
+//Creation of the Hamburger menu
+$('.hamburger').text('☰').append($ul)
+let show = false;
+const showMenu = (event) => {
+    if (show) {
+        $('li').each(function(index) {
+            $(this).css('display', 'none')
+        })
+        show = false
+    } else {
+        $('li').each(function(index) {
+            $(this).css('display', 'flex')
+        })
+        show = true;
+    }
+}
+$hamburger.on('click', showMenu)
 
 
 //Project section
