@@ -46,10 +46,9 @@ const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(
 });
 
 //Creation of the Hamburger menu
-const $hamburger = $('<div>').addClass('hamburger').text('☰');
-$ul.append($hamburger);
-$hamburger.click(function(){
+const $hamburger = $('<div>').addClass('hamburger').text('☰')
     let show = false;
+    const showMenu = (event) => {
     if (show) {
         $('li').each(function(index) {
             $(this).css('display', 'none')
@@ -61,7 +60,9 @@ $hamburger.click(function(){
         })
         show = true;
     }
-});
+};
+$ul.append($hamburger);
+$hamburger.on('click',showMenu);
 
 //About Me Section
 //About Me Variables
@@ -73,6 +74,7 @@ const $resume = $('<button>').text('Resume').click(function(){
     onclick=window.open('https://drive.google.com/file/d/1vWg65iWrUhfqduGKU9OnHacWUcYKBj-A/view?usp=sharing', '_blank');
 });
 
+$aboutMeDiv.css('align-items','center');
 $aboutMeHeading.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 $aboutMeContent.css('text-align','center').css('font-size','24px');
 
@@ -300,6 +302,7 @@ $li5.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $hamburger.css('color','gold').css('font-size','24px');
+
 $resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline');
 $linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline');
 $gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline');
