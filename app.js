@@ -70,7 +70,7 @@ const $aboutMeDiv = $('<div>').addClass('aboutMe');
 const $aboutMeHeading = $('<h2>').text('About Me');
 const $aboutMeContent = $('<p>').text('I am a self-starting, fast-learning videogame nerd looking to jumpstart a software engineering career following stints in sales and finance. I am analytical yet creative and a versatile team-player. I am ambitious, hard-working, enjoy acquiring new skills, and possess strong problem solving skills. I strive to be the best version of myself, to be better than my previous self, and derive joy from the sense of accomplishment of completing a task. I am a health-nut who enjoys travelling; sports; nature; and my family, friends, and dog.');
 const $resume = $('<button>').text('Resume').click(function(){
-    window.alert('You clicked on my Resume!')
+    //window.alert('You clicked on my Resume!')
     onclick=window.open('https://drive.google.com/file/d/1vWg65iWrUhfqduGKU9OnHacWUcYKBj-A/view?usp=sharing', '_blank');
 });
 
@@ -107,6 +107,78 @@ $sitesDiv.append($gitHub);
 //Skills Variables
 const $skillsDiv = $('<div>').addClass('skills');
 const $languageHeader = $('<h4>').addClass('language-header').text('Languages');
+const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases');
+const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge');
+const $languageMiniDiv = $('<div>').addClass('languages');
+const $frameworkAndDBsMiniDiv = $('<div>').addClass('frameworksAndDatabases');
+const $knowledgeMiniDiv = $('<div>').addClass('knowledge');
+const $languageList = $('<ul>').addClass('language-list');
+const $htmlItem = $('<li>').text('HTML ');
+const $cssItem = $('<li>').text('CSS ');
+const $javaScriptItem = $('<li>').text('JavaScript ');
+const $rubyItem = $('<li>').text('Ruby ');
+const $pythonItem = $('<li>').text('Python ');
+const $frameworkAndDBsList = $('<ul>').addClass('framework-and-database-list');
+const $jQueryItem = $('<li>').text('jQuery ');
+const $vueItem = $('<li>').text('Vue.js ');
+const $nodeItem = $('<li>').text('Node.js ');
+const $expressItem = $('<li>').text('Express.js ');
+const $mongoDBItem = $('<li>').text('MongoDB ');
+const $mongooseItem = $('<li>').text('Mongoose ');
+const $mongoAtlasItem = $('<li>').text('Mongo Atlas ');
+const $postgreSQLItem = $('<li>').text('PostgreSQL ');
+const $rubyOnRailsItem = $('<li>').text('Ruby on Rails ');
+const $mySQLItem = $('<li>').text('MySQL ');
+const $djangoItem = $('<li>').text('Django ');
+const $knowledgeList = $('<ul>').addClass('knowledge-list');
+const $oopItem = $('<li>').text('Object Oriented Programming (OOP) ');
+const $restAPIItem = $('<li>').text('Rest API Development (Ruby on Rails, Python w/ Django, and ME*N stack) ');
+const $algosAndDSItem = $('<li>').text('Algorithms and Data Structures ');
+const $gitItem = $('<li>').text('Git ');
+const $gitHubItem = $('<li>').text('GitHub ');
+const $terminalItem = $('<li>').text('Terminal ');
+const $herokuItem = $('<li>').text('Heroku ');
+const $frontendDeploymentItem = $('<li>').text('Frontend Deployment (Netlify, Vercel, and GitHub pages)');
+
+//Append all jQuery Elements to the doc
+$('body').append($skillsDiv);
+//Languages Mini Section
+$skillsDiv.append($languageHeader);
+$skillsDiv.append($languageMiniDiv).css('border','2px solid black').css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+$languageMiniDiv.append($languageList);
+$languageList.append($htmlItem);
+$languageList.append($cssItem);
+$languageList.append($javaScriptItem);
+$languageList.append($rubyItem);
+$languageList.append($pythonItem);
+//Frameworks and Databases Mini Section
+$skillsDiv.append($frameworkHeader);
+$skillsDiv.append($frameworkAndDBsMiniDiv).css('border','2px solid black');
+$frameworkAndDBsMiniDiv.append($frameworkAndDBsList);
+$frameworkAndDBsList.append($jQueryItem);
+$frameworkAndDBsList.append($vueItem);
+$frameworkAndDBsList.append($nodeItem);
+$frameworkAndDBsList.append($expressItem);
+$frameworkAndDBsList.append($mongoDBItem);
+$frameworkAndDBsList.append($mongooseItem);
+$frameworkAndDBsList.append($mongoAtlasItem);
+$frameworkAndDBsList.append($postgreSQLItem);
+$frameworkAndDBsList.append($rubyOnRailsItem);
+$frameworkAndDBsList.append($mySQLItem);
+$frameworkAndDBsList.append($djangoItem);
+//Knowledge Mini Section
+$skillsDiv.append($knowledgeHeader);
+$skillsDiv.append($knowledgeMiniDiv).css('border','2px solid black');
+$knowledgeMiniDiv.append($knowledgeList);
+$knowledgeList.append($oopItem);
+$knowledgeList.append($restAPIItem);
+$knowledgeList.append($algosAndDSItem);
+$knowledgeList.append($gitItem);
+$knowledgeList.append($gitHubItem);
+$knowledgeList.append($terminalItem);
+$knowledgeList.append($herokuItem);
+$knowledgeList.append($frontendDeploymentItem);
+
 
 
 
@@ -156,10 +228,10 @@ fetch(url)
             const $projectImage = $('<img>').attr('src', project.image).addClass('project-images').css('width','80%').css('display','flex').css('margin','5%');
             const $projectLink = $('<button>').on("click", function() {
                 onclick=window.open(project.url, '_blank');
-            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('margin-left','20px').css('margin-right','20px'); 
+            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold'); 
             const $projectRepo = $('<button>').on("click", function() {
                 onclick=window.open(project.repo, '_blank');
-            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('margin-left','20px').css('margin-right','20px');
+            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold');
             const $projectDescription = $('<p>').text(project.description).addClass('project-description').css('font-size','13px').css('color','black');
             
             $projectDiv2.append($projectHeader2);
@@ -206,7 +278,7 @@ $socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
 
 
 
-// CSS Variables
+// CSS jQuery
 $('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif").css('padding','0').css('margin','0').css('height','0').css('position','relative');
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
@@ -228,9 +300,9 @@ $li4.css('transition','background-color .5s, color .5s').hover(function(){
 $li5.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 });
-$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center');
-$linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c');
-$gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c');
+$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline');
+$linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline');
+$gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline');
 $iframe.css('width','250px').css('height','400px').css('position','relative').css('margin','0 auto').css('display','inline-flex').css('top','200px').css('left','50%').css('-ms-transform','translate(-50%,-50%)').css('transform','translate(-50%,-50%)');
 $projectSection.css('display','flex').css('flex-direction','column');
 
