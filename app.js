@@ -33,16 +33,16 @@ const $li = $('<li>'); $li.text('About me '); $ul.append($li); $li.click(functio
     window.scrollBy(0,480)
 }); 
 const $li2 = $('<li>'); $li2.text(' Sites '); $ul.append($li2); $li2.click(function() {
-    window.scrollBy(0,1111)
+    window.scrollBy(0,1000)
 });
 const $li3 = $('<li>'); $li3.text(' Skills'); $ul.append($li3); $li3.click(function() {
-    window.scrollBy(0,1888)
+    window.scrollBy(0,1150)
 });
 const $li4 = $('<li>'); $li4.text(' Projects '); $ul.append($li4); $li4.click(function() {
-    window.scrollBy(0,2388)
+    window.scrollBy(0,2200)
 });
 const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(function() {
-    window.scrollBy(0,5100)
+    window.scrollBy(0,7000)
 });
 
 //Creation of the Hamburger menu
@@ -107,6 +107,7 @@ $sitesDiv.append($gitHub);
 //Skills Section
 //Skills Variables
 const $skillsDiv = $('<div>').addClass('skills');
+const $skillsDivHeader = $('<h2>').text('Skills').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center').css('font-size','50px');
 const $languageHeader = $('<h4>').addClass('language-header').text('Languages');
 const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases');
 const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge');
@@ -143,6 +144,7 @@ const $frontendDeploymentItem = $('<li>').text('Frontend Deployment (Netlify, Ve
 
 //Append all jQuery Elements to the doc
 $('body').append($skillsDiv);
+$skillsDiv.append($skillsDivHeader);
 //Languages Mini Section
 $skillsDiv.append($languageHeader);
 $skillsDiv.append($languageMiniDiv).css('border','2px solid black').css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
