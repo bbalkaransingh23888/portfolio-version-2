@@ -23,7 +23,6 @@ $($welcomeDiv).append($introP);
 //Nav Variables
 const $navDiv = $('<div>').addClass('menu');
 const $ul = $('<ul>');
-// const $hamburger = $('<div>').addClass('hamburger');
 
 //appending elements to navigation div
 $('body').append($navDiv);
@@ -47,22 +46,22 @@ const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(
 });
 
 //Creation of the Hamburger menu
-// $('.hamburger')
-// let show = false;
-// const showMenu = (event) => {
-//     if (show) {
-//         $('li').each(function(index) {
-//             $(this).css('display', 'none')
-//         })
-//         show = false
-//     } else {
-//         $('li').each(function(index) {
-//             $(this).css('display', 'flex')
-//         })
-//         show = true;
-//     }
-// }
-// $hamburger.on('click', showMenu)
+const $hamburger = $('<div>').addClass('hamburger').text('☰');
+$ul.append($hamburger);
+$hamburger.click(function(){
+    let show = false;
+    if (show) {
+        $('li').each(function(index) {
+            $(this).css('display', 'none')
+        })
+        show = false
+    } else {
+        $('li').each(function(index) {
+            $(this).css('display', 'flex')
+        })
+        show = true;
+    }
+});
 
 //About Me Section
 //About Me Variables
@@ -287,19 +286,20 @@ $navDiv.css('text-align','right').css('color','#C0C0C0').css('display','flex').c
 $ul.css('font-size','smaller').css('align-content','center').css('margin','10px');
 $li.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
-});
+}, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $li2.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
-});
+}, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $li3.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
-});
+}, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $li4.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
-});
+}, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $li5.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
-});
+}, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
+$hamburger.css('color','gold').css('font-size','24px');
 $resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline');
 $linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline');
 $gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline');
@@ -310,3 +310,12 @@ $footer.css('background-color','black').css('border','3px solid gold').css('heig
 $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
 //CSS Dark Mode Function
+
+//Responsiveness function
+if($(window).width() > 1000 ) {
+
+}else if($(window).width > 800 && $(window).width() < 1000){
+
+}else{
+
+}
