@@ -15,7 +15,7 @@ const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaran
 //Dark Mode Function (had to split into two different buttons)
 const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('background-color','black').css('color','#dc143c').css('border','2px solid gold').click(function() {
     if($darkMode.text('Dark Mode')){
-        //$darkMode.text('Light Mode')
+        $lightMode.css('cursor','disabled');
         $('body').css('background-color','black');
         $navDiv.css('background-color','#333333').css('color','black');
         $h1.css('background-color','#333333');
@@ -51,6 +51,7 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('back
 })
 const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('background-color','#333333').css('color','#dc143c').css('border','2px solid gold').click(function() {
     if($darkMode.text('Dark Mode')){
+        $darkMode.css('cursor','disabled');
         $('body').css('background-color','#c0c0c0');
         $navDiv.css('background-color','black').css('color','#c0c0c0');
         $h1.css('background-color','black');
@@ -396,9 +397,9 @@ $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
 //Responsiveness function
 if($(window).width() > 1000 ) {
-
+    $('p').css('font-size','12px')
 }else if($(window).width > 800 && $(window).width() < 1000){
-
+    $('p').css('font-size','18px');
 }else{
-
+    $('p').css('font-size','24px');
 }
