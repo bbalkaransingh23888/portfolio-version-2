@@ -12,17 +12,60 @@ const $welcomeDiv = $('<div>').addClass('welcome');
 const $profilePic = $('<img>').attr('src', 'https://res.cloudinary.com/lonewolf23/image/upload/v1619376681/IMG_3219_ohaedw.png').attr('alt', 'my profile pic');
 const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaransingh. I am a Fullstack Software Engineer');
 
+//Dark Mode Function (had to split into two different buttons)
+const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').click(function() {
+    if($darkMode.text('Dark Mode')){
+        $('body').css('background-color','black');
+        $navDiv.css('background-color','#333333').css('color','black');
+        $h1.css('background-color','#333333');
+        $("p").css('color','#c0c0c0');
+        $resume.css('background-color','#333333');
+        $linkedIn.css('background-color','#333333');
+        $gitHub.css('background-color','#333333');
+        $("h2").css('background-color','#333333');
+        $("li").css('color','#c0c0c0');
+        $languageMiniDiv.css('color','#c0c0c0');
+        $frameworkAndDBsMiniDiv.css('color','#c0c0c0');
+        $knowledgeMiniDiv.css('color','#c0c0c0');
+        $("h4").css('background-color','#333333');
+        $footer.css('background-color','#333333')
+    }
+})
+const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').click(function() {
+    if($darkMode.text('Dark Mode')){
+        $('body').css('background-color','#c0c0c0');
+        $navDiv.css('background-color','black').css('color','#c0c0c0');
+        $h1.css('background-color','black');
+        $("p").css('color','black')
+        $resume.css('background-color','black');
+        $linkedIn.css('background-color','black');
+        $gitHub.css('background-color','black');
+        $("h2").css('background-color','black');
+        $("li").css('color','black');
+        $languageMiniDiv.css('color','black');
+        $frameworkAndDBsMiniDiv.css('color','black');
+        $knowledgeMiniDiv.css('color','black');
+        $("h4").css('background-color','black');
+        $footer.css('background-color','black');
+    }
+})
+
 //attaching jQuery created elements to Intro div
 $('body').append($welcomeDiv);
-$($welcomeDiv).append($h1);
-$($welcomeDiv).append($profilePic);
-$($welcomeDiv).append($introP);
+$welcomeDiv.append($h1);
+$welcomeDiv.append($profilePic);
+$welcomeDiv.append($introP);
+$welcomeDiv.append($darkMode);
+$welcomeDiv.append($lightMode);
+
 
 
 //Navigation menu - Hamburger for mobile
 //Nav Variables
 const $navDiv = $('<div>').addClass('menu');
 const $ul = $('<ul>');
+
+$navDiv.css('text-align','right');
 
 //appending elements to navigation div
 $('body').append($navDiv);
@@ -46,7 +89,7 @@ const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(
 });
 
 //Creation of the Hamburger menu
-const $hamburger = $('<div>').addClass('hamburger').text('☰');
+const $hamburger = $('<div>').addClass('hamburger').text('☰').css('text-align','right');
     let show = true;
     const showMenu = (event) => {
     if (show) {
@@ -108,13 +151,13 @@ $sitesDiv.append($gitHub);
 //Skills Variables
 const $skillsDiv = $('<div>').addClass('skills');
 const $skillsDivHeader = $('<h2>').text('Skills').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center').css('font-size','50px');
-const $languageHeader = $('<h4>').addClass('language-header').text('Languages');
-const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases');
-const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge');
+const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('background-color','black').css('color','#dc143c');
+const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases').css('background-color','black').css('color','#dc143c');
+const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('background-color','black').css('color','#dc143c');
 const $languageMiniDiv = $('<div>').addClass('languages');
-const $frameworkAndDBsMiniDiv = $('<div>').addClass('frameworksAndDatabases');
-const $knowledgeMiniDiv = $('<div>').addClass('knowledge');
-const $languageList = $('<ul>').addClass('language-list');
+const $frameworkAndDBsMiniDiv = $('<div>').addClass('frameworksAndDatabases').css('color','black');
+const $knowledgeMiniDiv = $('<div>').addClass('knowledge').css('color','black');
+const $languageList = $('<ul>').addClass('language-list').css('color','black');
 const $htmlItem = $('<li>').text('HTML ');
 const $cssItem = $('<li>').text('CSS ');
 const $javaScriptItem = $('<li>').text('JavaScript ');
@@ -271,9 +314,9 @@ $($contactForm).append($iframe);
 
 
 //Footer
-const $footer = $('<footer>').addClass('footer');
-const $socialMediaP = $('<p>');
-const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank');
+const $footer = $('<footer>');
+const $socialMediaP = $('<p>').addClass('footer');
+const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank').text('LinkedIn').css('color','red');
 //const $linkedinFooterSymbol = $('<i>').addClass('fab fa-linkedin');
 $('body').append($footer);
 $footer.append($socialMediaP);
@@ -286,7 +329,7 @@ $('body').css('background-color','#C0C0C0').css('color','black').css('font-famil
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center');
-$navDiv.css('text-align','right').css('color','#C0C0C0').css('display','flex').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
+$navDiv.css('color','#C0C0C0').css('display','flex').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
 $ul.css('font-size','smaller').css('align-content','center').css('margin','10px');
 $li.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
@@ -305,6 +348,8 @@ $li5.css('transition','background-color .5s, color .5s').hover(function(){
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $hamburger.css('color','gold').css('font-size','24px');
 
+$aboutMeContent.css('color','black');
+
 $resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline');
 $linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline');
 $gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline');
@@ -313,8 +358,6 @@ $projectSection.css('display','flex').css('flex-direction','column');
 
 $footer.css('background-color','black').css('border','3px solid gold').css('height', '50px').css('position', 'relative').css('bottom', '0').css('left', '0').css('right','0');
 $linkedinFooterLink.css('text-align', 'left').css('color','blue');
-
-//CSS Dark Mode Function
 
 //Responsiveness function
 if($(window).width() > 1000 ) {
