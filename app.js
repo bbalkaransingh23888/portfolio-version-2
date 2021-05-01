@@ -13,8 +13,9 @@ const $profilePic = $('<img>').attr('src', 'https://res.cloudinary.com/lonewolf2
 const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaransingh. I am a Fullstack Software Engineer');
 
 //Dark Mode Function (had to split into two different buttons)
-const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').click(function() {
+const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('background-color','black').css('color','#dc143c').css('border','2px solid gold').click(function() {
     if($darkMode.text('Dark Mode')){
+        //$darkMode.text('Light Mode')
         $('body').css('background-color','black');
         $navDiv.css('background-color','#333333').css('color','black');
         $h1.css('background-color','#333333');
@@ -22,8 +23,25 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').click(fun
         $resume.css('background-color','#333333');
         $linkedIn.css('background-color','#333333');
         $gitHub.css('background-color','#333333');
+        $darkMode.css('background-color','#333333');
+        $lightMode.css('background-color','black');
         $("h2").css('background-color','#333333');
         $("li").css('color','#c0c0c0');
+        $li.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","#333333").css('color','white')});
+        $li2.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","#333333").css('color','white')});
+        $li3.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","#333333").css('color','white')});
+        $li4.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","#333333").css('color','white')});
+        $li5.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","#333333").css('color','white')});
         $languageMiniDiv.css('color','#c0c0c0');
         $frameworkAndDBsMiniDiv.css('color','#c0c0c0');
         $knowledgeMiniDiv.css('color','#c0c0c0');
@@ -31,7 +49,7 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').click(fun
         $footer.css('background-color','#333333')
     }
 })
-const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').click(function() {
+const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('background-color','#333333').css('color','#dc143c').css('border','2px solid gold').click(function() {
     if($darkMode.text('Dark Mode')){
         $('body').css('background-color','#c0c0c0');
         $navDiv.css('background-color','black').css('color','#c0c0c0');
@@ -40,8 +58,25 @@ const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').click(
         $resume.css('background-color','black');
         $linkedIn.css('background-color','black');
         $gitHub.css('background-color','black');
-        $("h2").css('background-color','black');
+        $darkMode.css('background-color','black');
+        $lightMode.css('background-color','#333333');
+        $("h2").css('background-color','#c0c0c0');
         $("li").css('color','black');
+        $li.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
+        $li2.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
+        $li3.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
+        $li4.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
+        $li5.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+            $(this).css('background-color','#dc143c').css('color','white');
+        }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $languageMiniDiv.css('color','black');
         $frameworkAndDBsMiniDiv.css('color','black');
         $knowledgeMiniDiv.css('color','black');
