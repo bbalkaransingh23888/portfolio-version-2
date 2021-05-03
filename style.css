@@ -1,0 +1,13 @@
+@media (min-width: 992px){
+    .intro{
+        font-size: 12px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+    .intro{
+        font-size: 18px;
+    }
+
+}

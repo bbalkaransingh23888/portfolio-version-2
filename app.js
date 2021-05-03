@@ -99,49 +99,49 @@ $welcomeDiv.append($lightMode);
 //Navigation menu - Hamburger for mobile
 //Nav Variables
 const $navDiv = $('<div>').addClass('menu');
-const $ul = $('<ul>');
+const $ulNav = $('<ul>');
 
 $navDiv.css('text-align','right');
 
 //appending elements to navigation div
 $('body').append($navDiv);
-$($navDiv).append($ul);
-
-//create the list items that will make up the navigation menu
-const $li = $('<li>'); $li.text('About me '); $ul.append($li); $li.click(function() {
-    window.scrollBy(0,480)
-}); 
-const $li2 = $('<li>'); $li2.text(' Sites '); $ul.append($li2); $li2.click(function() {
-    window.scrollBy(0,1000)
-});
-const $li3 = $('<li>'); $li3.text(' Skills'); $ul.append($li3); $li3.click(function() {
-    window.scrollBy(0,1150)
-});
-const $li4 = $('<li>'); $li4.text(' Projects '); $ul.append($li4); $li4.click(function() {
-    window.scrollBy(0,2200)
-});
-const $li5 = $('<li>'); $li5.text(' Contact Me '); $ul.append($li5); $li5.click(function() {
-    window.scrollBy(0,7000)
-});
+$($navDiv).append($ulNav);
 
 //Creation of the Hamburger menu
-const $hamburger = $('<div>').addClass('hamburger').text('☰').css('text-align','right');
-    let show = true;
+const $hamburger = $('<div>').addClass('hamburger').text('☰').css('text-align','left');
+    let show = false;
     const showMenu = (event) => {
     if (show) {
-        $('li').each(function(index) {
+        $('.navItem').each(function(index) {
             $(this).css('display', 'none');
         })
-        show = false
+        show = false;
     } else {
-        $('li').each(function(index) {
+        $('.navItem').each(function(index) {
             $(this).css('display', 'flex');
         })
         show = true;
     }
 };
-$ul.append($hamburger);
+$ulNav.append($hamburger);
 $hamburger.on('click',showMenu);
+
+//create the list items that will make up the navigation menu
+const $li = $('<li>').addClass('navItem').text('About me '); $ulNav.append($li); $li.click(function() {
+    window.scrollBy(0,480)
+}); 
+const $li2 = $('<li>').addClass('navItem').text(' Sites '); $ulNav.append($li2); $li2.click(function() {
+    window.scrollBy(0,1000)
+});
+const $li3 = $('<li>').addClass('navItem').text(' Skills'); $ulNav.append($li3); $li3.click(function() {
+    window.scrollBy(0,1150)
+});
+const $li4 = $('<li>').addClass('navItem').text(' Projects '); $ulNav.append($li4); $li4.click(function() {
+    window.scrollBy(0,2200)
+});
+const $li5 = $('<li>').addClass('navItem').text(' Contact Me '); $ulNav.append($li5); $li5.click(function() {
+    window.scrollBy(0,7000)
+});
 
 //About Me Section
 //About Me Variables
@@ -335,8 +335,8 @@ fetch(url)
 //Contact Section
 const $contactForm = $('<form>').addClass('contactMe');
 const $contactHeader = $('<h2>').text('Contact Me');
-const $email = $('<p>').text('email: bbalkaransingh2223@gmail.com');
-const $phone = $('<p>').text('phone: (646)265-4025');
+const $email = $('<p>').text('email: bbalkaransingh2223@gmail.com').css('text-align','center');
+const $phone = $('<p>').text('phone: (646)265-4025').css('text-align','center');
 const $iframe = $('<iframe>').attr('src', 'https://docs.google.com/forms/d/e/1FAIpQLSee9b-FvwXLN_jM3DMPBGWGj7EtE_ax6LHY5YQx1eAvsb_NAQ/viewform?embedded=true').css('frameboder','0').css('marginheight','0').css('marginwidth','0').text('Loading...');
 
 $contactHeader.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
@@ -352,21 +352,22 @@ $($contactForm).append($iframe);
 //Footer
 const $footer = $('<footer>');
 const $socialMediaP = $('<p>').addClass('footer');
-const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank').text('LinkedIn').css('color','red');
+const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank').text('LinkedIn');
+const $gitHubPortfolioRepo = $('<a>').attr('href','https://github.com/bbalkaransingh23888/portfolio-version-2').attr('target','_blank').text('Repo for this site');
 //const $linkedinFooterSymbol = $('<i>').addClass('fab fa-linkedin');
 $('body').append($footer);
 $footer.append($socialMediaP);
 $socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
-
+$socialMediaP.append($gitHubPortfolioRepo);
 
 
 // CSS jQuery
 $('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif").css('padding','0').css('margin','0').css('height','0').css('position','relative');
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
-$introP.css('text-align', 'center');
+$introP.css('text-align', 'center').css('font-size','24px');
 $navDiv.css('color','#C0C0C0').css('display','flex').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
-$ul.css('font-size','smaller').css('align-content','center').css('margin','10px');
+$ulNav.css('font-size','smaller').css('align-content','center').css('margin','10px');
 $li.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
@@ -386,20 +387,30 @@ $hamburger.css('color','gold').css('font-size','24px');
 
 $aboutMeContent.css('color','black');
 
-$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline');
-$linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline');
-$gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline');
+$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
+$linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
+$gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
 $iframe.css('width','250px').css('height','400px').css('position','relative').css('margin','0 auto').css('display','inline-flex').css('top','200px').css('left','50%').css('-ms-transform','translate(-50%,-50%)').css('transform','translate(-50%,-50%)');
 $projectSection.css('display','flex').css('flex-direction','column');
 
 $footer.css('background-color','black').css('border','3px solid gold').css('height', '50px').css('position', 'relative').css('bottom', '0').css('left', '0').css('right','0');
 $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
-//Responsiveness function
-if($(window).width() > 1000 ) {
-    $('p').css('font-size','12px')
-}else if($(window).width > 800 && $(window).width() < 1000){
-    $('p').css('font-size','18px');
-}else{
-    $('p').css('font-size','24px');
-}
+//Responsiveness function - Done in CSS file for now
+
+// let $responsive = $('<html>').on(function(){
+//     if(minWidth.matches){
+//         $h1.css('color','blue');
+//         $introP.css('font-size','12px');
+//         $aboutMeContent.css('font-size','12px');
+//     }else{
+//         $h1.css('color','#dc143c');
+//         $introP.css('font-size','24px');
+//         $aboutMeContent.css('font-size','24px');
+//     }
+// });
+
+// const minWidth = window.matchMedia('(min-width: 768px)');
+
+// $responsive(minWidth);
+// minWidth.addEventListener($responsive);
