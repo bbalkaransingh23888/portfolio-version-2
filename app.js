@@ -14,10 +14,9 @@ const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaran
 
 //Dark Mode Function (had to split into two different buttons)
 const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('background-color','black').css('color','#dc143c').css('border','2px solid gold').click(function() {
-    if($darkMode.text('Dark Mode')){
         $lightMode.css('cursor','disabled');
         $('body').css('background-color','black');
-        $navDiv.css('background-color','#333333').css('color','black');
+        $navMenu.css('background-color','#333333').css('color','black');
         $h1.css('background-color','#333333');
         $("p").css('color','#c0c0c0');
         $resume.css('background-color','#333333');
@@ -27,19 +26,20 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('back
         $lightMode.css('background-color','black');
         $("h2").css('background-color','#333333');
         $("li").css('color','#c0c0c0');
-        $li.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+        $('.navItem').css('color','#c0c0c0');
+        $a.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
-        $li2.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+        $a2.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
-        $li3.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+        $a3.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
-        $li4.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+        $a4.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
-        $li5.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
+        $a5.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
         $languageMiniDiv.css('color','#c0c0c0');
@@ -47,13 +47,11 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('back
         $knowledgeMiniDiv.css('color','#c0c0c0');
         $("h4").css('background-color','#333333');
         $footer.css('background-color','#333333')
-    }
-})
+});
 const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('background-color','#333333').css('color','#dc143c').css('border','2px solid gold').click(function() {
-    if($darkMode.text('Dark Mode')){
         $darkMode.css('cursor','disabled');
         $('body').css('background-color','#c0c0c0');
-        $navDiv.css('background-color','black').css('color','#c0c0c0');
+        $navMenu.css('background-color','black').css('color','#c0c0c0');
         $h1.css('background-color','black');
         $("p").css('color','black')
         $resume.css('background-color','black');
@@ -63,19 +61,20 @@ const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('b
         $lightMode.css('background-color','#333333');
         $("h2").css('background-color','#c0c0c0');
         $("li").css('color','black');
-        $li.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+        $('.navItem').css('color','black');
+        $a.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
-        $li2.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+        $a2.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
-        $li3.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+        $a3.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
-        $li4.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+        $a4.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
-        $li5.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
+        $a5.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
             $(this).css('background-color','#dc143c').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $languageMiniDiv.css('color','black');
@@ -83,8 +82,7 @@ const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('b
         $knowledgeMiniDiv.css('color','black');
         $("h4").css('background-color','black');
         $footer.css('background-color','black');
-    }
-})
+});
 
 //attaching jQuery created elements to Intro div
 $('body').append($welcomeDiv);
@@ -98,48 +96,38 @@ $welcomeDiv.append($lightMode);
 
 //Navigation menu - Hamburger for mobile
 //Nav Variables
-const $navDiv = $('<div>').addClass('menu');
-const $ulNav = $('<ul>');
-
-$navDiv.css('text-align','right');
+const $navMenu = $('<nav>').addClass('menu');
 
 //appending elements to navigation div
-$('body').append($navDiv);
-$($navDiv).append($ulNav);
+$('body').append($navMenu);
 
 //Creation of the Hamburger menu
-const $hamburger = $('<div>').addClass('hamburger').text('☰').css('text-align','left');
-    let show = false;
-    const showMenu = (event) => {
+let show = false;
+const $hamburger = $('<div>').addClass('hamburger').text('☰').click(function() {
     if (show) {
-        $('.navItem').each(function(index) {
-            $(this).css('display', 'none');
-        })
+        $('.navItem').css('display','none');
         show = false;
     } else {
-        $('.navItem').each(function(index) {
-            $(this).css('display', 'flex');
-        })
+        $('.navItem').css('display','flex');
         show = true;
     }
-};
-$ulNav.append($hamburger);
-$hamburger.on('click',showMenu);
+});
+$navMenu.append($hamburger);
 
 //create the list items that will make up the navigation menu
-const $li = $('<li>').addClass('navItem').text('About me '); $ulNav.append($li); $li.click(function() {
+const $a = $('<a>').addClass('navItem').css('display','none').text('About me '); $navMenu.append($a); $a.click(function() {
     window.scrollBy(0,480)
 }); 
-const $li2 = $('<li>').addClass('navItem').text(' Sites '); $ulNav.append($li2); $li2.click(function() {
+const $a2 = $('<a>').addClass('navItem').css('display','none').text(' Sites '); $navMenu.append($a2); $a2.click(function() {
     window.scrollBy(0,1000)
 });
-const $li3 = $('<li>').addClass('navItem').text(' Skills'); $ulNav.append($li3); $li3.click(function() {
+const $a3 = $('<a>').addClass('navItem').css('display','none').text(' Skills'); $navMenu.append($a3); $a3.click(function() {
     window.scrollBy(0,1150)
 });
-const $li4 = $('<li>').addClass('navItem').text(' Projects '); $ulNav.append($li4); $li4.click(function() {
+const $a4 = $('<a>').addClass('navItem').css('display','none').text(' Projects '); $navMenu.append($a4); $a4.click(function() {
     window.scrollBy(0,2200)
 });
-const $li5 = $('<li>').addClass('navItem').text(' Contact Me '); $ulNav.append($li5); $li5.click(function() {
+const $a5 = $('<a>').addClass('navItem').css('display','none').text(' Contact Me '); $navMenu.append($a5); $a5.click(function() {
     window.scrollBy(0,7000)
 });
 
@@ -366,21 +354,20 @@ $('body').css('background-color','#C0C0C0').css('color','black').css('font-famil
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center').css('font-size','24px');
-$navDiv.css('color','#C0C0C0').css('display','flex').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
-$ulNav.css('font-size','smaller').css('align-content','center').css('margin','10px');
-$li.css('transition','background-color .5s, color .5s').hover(function(){
+$navMenu.css('color','#C0C0C0').css('display','flex').css('flex-direction','column').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
+$a.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
-$li2.css('transition','background-color .5s, color .5s').hover(function(){
+$a2.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
-$li3.css('transition','background-color .5s, color .5s').hover(function(){
+$a3.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
-$li4.css('transition','background-color .5s, color .5s').hover(function(){
+$a4.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
-$li5.css('transition','background-color .5s, color .5s').hover(function(){
+$a5.css('transition','background-color .5s, color .5s').hover(function(){
     $(this).css('background-color','#dc143c').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $hamburger.css('color','gold').css('font-size','24px');
