@@ -385,19 +385,34 @@ $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
 //Responsiveness function - Done in CSS file for now
 
-// let $responsive = $('<html>').on(function(){
-//     if(minWidth.matches){
-//         $h1.css('color','blue');
-//         $introP.css('font-size','12px');
-//         $aboutMeContent.css('font-size','12px');
-//     }else{
-//         $h1.css('color','#dc143c');
-//         $introP.css('font-size','24px');
-//         $aboutMeContent.css('font-size','24px');
-//     }
-// });
+let mediaQueryLaptop = window.matchMedia('(min-width: 769px)');
+let mediaQueryDevices = window.matchMedia('(max-width: 768px)');
 
-// const minWidth = window.matchMedia('(min-width: 768px)');
+let responsive = () => {
+    if(mediaQueryLaptop.matches){
+        $introP.css('font-size','12px').css('color','red');
+    }
+    
+    if(mediaQueryDevices.matches){
+        $introP.css('font-size','24px').css('color','black');
+    }
+};
 
-// $responsive(minWidth);
-// minWidth.addEventListener($responsive);
+
+
+responsive();
+
+
+
+let $mediaQueries = $('<html>').on(function(e) {
+    if (e.matches(mediaQueryLaptop)) {
+        /* the viewport is 768 pixels wide or more */
+        $('p').css('font-size','12px').css('color','red');
+    } else if(e.matches(mediaQueryDevices)) {
+        /* the viewport is less than 768 pixels wide*/
+        $('p').css('font-size','24px').css('color','black');
+    }
+});
+
+
+
