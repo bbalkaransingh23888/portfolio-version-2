@@ -383,10 +383,8 @@ $projectSection.css('display','flex').css('flex-direction','column');
 $footer.css('background-color','black').css('border','3px solid gold').css('height', '50px').css('position', 'relative').css('bottom', '0').css('left', '0').css('right','0');
 $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
-//Responsiveness function - Done in CSS file for now
-
-// let mediaQueryLaptop = window.matchMedia('(min-width: 769px)');
-// let mediaQueryDevices = window.matchMedia('(max-width: 768px)');
+//Responsiveness function - Done in vanilla JavaScript for now, 
+//but I will refactor this into jQuery at a later point.
 
 let responsive = () => {
     if(window.matchMedia('(min-width: 992px)').matches){
@@ -397,6 +395,7 @@ let responsive = () => {
         $('p').css('font-size','18px').css('color','blue');
     }
 };
+
 
 
 
