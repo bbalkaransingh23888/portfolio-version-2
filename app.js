@@ -295,7 +295,8 @@ fetch(url)
     // function that generates HTML elements for each of the rows on your google sheet (i.e., each of the elements in your projects array)
   const app = (data) => {
         const createProjectElement = (project) => {
-            const $projectDiv2 = $('<div>').addClass('project-box').on(function() {
+            const $projectDiv2 = $('<div>').addClass('project-box');
+            let projectSectionMedia = function() {
                 if(window.matchMedia('(min-width: 992px)').matches){
                     $projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
@@ -303,17 +304,25 @@ fetch(url)
                 }else{
                     $projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap').css('max-width','360px');
                 }
-            });
-            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px').on(function(){
+            };
+            projectSectionMedia();
+            window.addEventListener('resize',projectSectionMedia,false);
+            
+            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px');
+            let headerMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
-                    $projectHeader2.css('font-size','25px');
+                    $projectHeader2.css('font-size','25px').css('background-color','#c0c0c0');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
-                    $projectHeader2.css('font-size','32px');
+                    $projectHeader2.css('font-size','32px').css('background-color','black');
                 }else{
                     $projectHeader2.css('font-size','25px');
                 }
-            });
-            const $projectImage = $('<img>').attr('src', project.image).addClass('project-images').css('width','80%').css('display','flex').css('margin','5%').on(function(){
+            };
+            headerMedia();
+            window.addEventListener('resize',headerMedia,false);
+
+            const $projectImage = $('<img>').attr('src', project.image).addClass('project-images').css('width','80%').css('display','flex').css('margin','5%');
+            let imageMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
                     $projectImage.css('height','100px').css('width','300px').css('display','flex').css('flex-direction','row').css('border','2px solid gold');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
@@ -321,30 +330,42 @@ fetch(url)
                 }else{
                     $projectImage.css('width','240px');
                 }
-            });
+            };
+            imageMedia();
+            window.addEventListener('resize',imageMedia,false);
+
             const $projectLink = $('<button>').on("click", function() {
                 onclick=window.open(project.url, '_blank');
-            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold').on(function(){
+            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold');
+            let siteMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
-                    $projectLink.css('text-align','center').css('font-size','18px');
+                    $projectLink.css('text-align','center').css('font-size','18px').css('display','flex').css('flex-direction','row').css('width','130px');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
                     $projectLink.css('font-size','24px').css('text-align','center').css('margin-left','20px').css('margin-right','20px');
                 }else{
                     $projectLink.css('width','40%').css('margin','10px 5%').css('text-align','center').css('font-size','21px');
                 }
-            }); 
+            }; 
+            siteMedia();
+            window.addEventListener('resize',siteMedia,false);
+
             const $projectRepo = $('<button>').on("click", function() {
                 onclick=window.open(project.repo, '_blank');
-            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold').on(function(){
+            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold');
+            let repoMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
-                    $projectRepo.css('text-align','center').css('font-size','18px');
+                    $projectRepo.css('text-align','center').css('font-size','18px').css('display','flex').css('flex-direction','row').css('width','130px');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
                     $projectRepo.css('font-size','24px').css('text-align','center').css('margin-left','20px').css('margin-right','20px');
                 }else{
                     $projectRepo.css('width','40%').css('margin','10px 5%').css('text-align','center').css('font-size','21px');
                 }
-            });
-            const $projectDescription = $('<p>').text(project.description).addClass('project-description').css('font-size','13px').css('color','black').on(function(){
+            };
+            repoMedia();
+            window.addEventListener('resize',repoMedia,false);
+
+            const $projectDescription = $('<p>').text(project.description).addClass('project-description').css('font-size','13px').css('color','black');
+            let descriptionMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
                     $projectDescription.css('width','300px').css('margin','21px').css('font-size','13px');
                 }else if(window.matchMedia('(max-width: 768px)').matches){
@@ -352,7 +373,9 @@ fetch(url)
                 }else{
                     $projectDescription.css('width','40%').css('margin','10px 5%').css('font-size','16px');
                 }
-            });
+            };
+            descriptionMedia();
+            window.addEventListener('resize',descriptionMedia,false);
             
             $projectDiv2.append($projectHeader2);
             $projectDiv2.append($projectImage);
@@ -439,15 +462,12 @@ $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 let responsive = () => {
     if(window.matchMedia('(min-width: 992px)').matches){
         $('p').css('font-size','12px');
-        //$projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
         $skillDivContainer.css('display','flex').css('flex-direction','row').css('justify-content','center');
     } else if(window.matchMedia('(max-width: 768px)').matches){
         $('p').css('font-size','24px');
-        //$projects.css('display','flex').css('flex-direction','column').css('align-items','center');
         $skillDivContainer.css('display','flex').css('flex-direction','column').css('align-items','center');
     }else{
         $('p').css('font-size','18px');
-        //$projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
         $skillDivContainer.css('display','flex').css('flex-direction','row').css('justify-content','center');
     }
 };
