@@ -174,10 +174,11 @@ $sitesDiv.append($gitHub);
 //Skills Section
 //Skills Variables
 const $skillsDiv = $('<div>').addClass('skills');
+const $skillDivContainer = $('<div>').addClass('skills-container').css('width','80%');
 const $skillsDivHeader = $('<h2>').text('Skills').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center').css('font-size','50px');
-const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('background-color','black').css('color','#dc143c');
-const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases').css('background-color','black').css('color','#dc143c');
-const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('background-color','black').css('color','#dc143c');
+const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('background-color','black').css('color','#dc143c').addClass('skillsTitle');
+const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases').css('background-color','black').css('color','#dc143c').addClass('skillsTitle');
+const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('background-color','black').css('color','#dc143c').addClass('skillsTitle');
 const $languageMiniDiv = $('<div>').addClass('languages');
 const $frameworkAndDBsMiniDiv = $('<div>').addClass('frameworksAndDatabases').css('color','black');
 const $knowledgeMiniDiv = $('<div>').addClass('knowledge').css('color','black');
@@ -211,10 +212,11 @@ const $frontendDeploymentItem = $('<li>').text('Frontend Deployment (Netlify, Ve
 
 //Append all jQuery Elements to the doc
 $('body').append($skillsDiv);
-$skillsDiv.append($skillsDivHeader);
+$skillsDiv.append($skillDivContainer);
+$skillsDiv.prepend($skillsDivHeader);
 //Languages Mini Section
-$skillsDiv.append($languageHeader);
-$skillsDiv.append($languageMiniDiv).css('border','2px solid black').css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+$skillDivContainer.append($languageMiniDiv).css('border','2px solid black').css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+$languageMiniDiv.append($languageHeader);
 $languageMiniDiv.append($languageList);
 $languageList.append($htmlItem);
 $languageList.append($cssItem);
@@ -222,8 +224,8 @@ $languageList.append($javaScriptItem);
 $languageList.append($rubyItem);
 $languageList.append($pythonItem);
 //Frameworks and Databases Mini Section
-$skillsDiv.append($frameworkHeader);
-$skillsDiv.append($frameworkAndDBsMiniDiv).css('border','2px solid black');
+$skillDivContainer.append($frameworkAndDBsMiniDiv).css('border','2px solid black');
+$frameworkAndDBsMiniDiv.append($frameworkHeader);
 $frameworkAndDBsMiniDiv.append($frameworkAndDBsList);
 $frameworkAndDBsList.append($jQueryItem);
 $frameworkAndDBsList.append($vueItem);
@@ -237,8 +239,8 @@ $frameworkAndDBsList.append($rubyOnRailsItem);
 $frameworkAndDBsList.append($mySQLItem);
 $frameworkAndDBsList.append($djangoItem);
 //Knowledge Mini Section
-$skillsDiv.append($knowledgeHeader);
-$skillsDiv.append($knowledgeMiniDiv).css('border','2px solid black');
+$skillDivContainer.append($knowledgeMiniDiv).css('border','2px solid black');
+$knowledgeMiniDiv.append($knowledgeHeader);
 $knowledgeMiniDiv.append($knowledgeList);
 $knowledgeList.append($oopItem);
 $knowledgeList.append($restAPIItem);
@@ -278,7 +280,7 @@ fetch(url)
     //so when trying to access data of each of your projects,
     //you can simply use project.title, instead of project.gsx$title.$t
     const projects = data.feed.entry.map(entry => {
-          // you spit ouit that data out as tidier array of objects
+          // you spit out that data out as tidier array of objects
             return {
                 title: entry.gsx$title.$t,
                 image: entry.gsx$image.$t,
@@ -293,16 +295,64 @@ fetch(url)
     // function that generates HTML elements for each of the rows on your google sheet (i.e., each of the elements in your projects array)
   const app = (data) => {
         const createProjectElement = (project) => {
-            const $projectDiv2 = $('<div>');
-            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px');
-            const $projectImage = $('<img>').attr('src', project.image).addClass('project-images').css('width','80%').css('display','flex').css('margin','5%');
+            const $projectDiv2 = $('<div>').addClass('project-box').on(function() {
+                if(window.matchMedia('(min-width: 992px)').matches){
+                    $projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
+                } else if(window.matchMedia('(max-width: 768px)').matches){
+                    $projects.css('display','flex').css('flex-direction','column').css('align-items','center').css('max-width','360px');
+                }else{
+                    $projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap').css('max-width','360px');
+                }
+            });
+            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px').on(function(){
+                if(window.matchMedia('(min-width: 992px)').matches){
+                    $projectHeader2.css('font-size','25px');
+                } else if(window.matchMedia('(max-width: 768px)').matches){
+                    $projectHeader2.css('font-size','32px');
+                }else{
+                    $projectHeader2.css('font-size','25px');
+                }
+            });
+            const $projectImage = $('<img>').attr('src', project.image).addClass('project-images').css('width','80%').css('display','flex').css('margin','5%').on(function(){
+                if(window.matchMedia('(min-width: 992px)').matches){
+                    $projectImage.css('height','100px').css('width','300px').css('display','flex').css('flex-direction','row').css('border','2px solid gold');
+                } else if(window.matchMedia('(max-width: 768px)').matches){
+                    $projectImage.css('width','80%').css('display','flex').css('margin','5%');
+                }else{
+                    $projectImage.css('width','240px');
+                }
+            });
             const $projectLink = $('<button>').on("click", function() {
                 onclick=window.open(project.url, '_blank');
-            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold'); 
+            }).text('Site').addClass('project-link').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold').on(function(){
+                if(window.matchMedia('(min-width: 992px)').matches){
+                    $projectLink.css('text-align','center').css('font-size','18px');
+                } else if(window.matchMedia('(max-width: 768px)').matches){
+                    $projectLink.css('font-size','24px').css('text-align','center').css('margin-left','20px').css('margin-right','20px');
+                }else{
+                    $projectLink.css('width','40%').css('margin','10px 5%').css('text-align','center').css('font-size','21px');
+                }
+            }); 
             const $projectRepo = $('<button>').on("click", function() {
                 onclick=window.open(project.repo, '_blank');
-            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold');
-            const $projectDescription = $('<p>').text(project.description).addClass('project-description').css('font-size','13px').css('color','black');
+            }).text('Repo').addClass('project-repo').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20px').css('margin-right','20px').css('border','2px solid gold').on(function(){
+                if(window.matchMedia('(min-width: 992px)').matches){
+                    $projectRepo.css('text-align','center').css('font-size','18px');
+                } else if(window.matchMedia('(max-width: 768px)').matches){
+                    $projectRepo.css('font-size','24px').css('text-align','center').css('margin-left','20px').css('margin-right','20px');
+                }else{
+                    $projectRepo.css('width','40%').css('margin','10px 5%').css('text-align','center').css('font-size','21px');
+                }
+            });
+            const $projectDescription = $('<p>').text(project.description).addClass('project-description').css('font-size','13px').css('color','black').on(function(){
+                if(window.matchMedia('(min-width: 992px)').matches){
+                    $projectDescription.css('width','300px').css('margin','21px').css('font-size','13px');
+                }else if(window.matchMedia('(max-width: 768px)').matches){
+                    $projectDescription.css('font-size','19px');
+                }else{
+                    $projectDescription.css('width','40%').css('margin','10px 5%').css('font-size','16px');
+                }
+            });
             
             $projectDiv2.append($projectHeader2);
             $projectDiv2.append($projectImage);
@@ -311,13 +361,13 @@ fetch(url)
             $projectDiv2.append($projectDescription);
             
             return $projectDiv2
+
         }
         data.forEach( project => {
             const $projectDiv3 = createProjectElement(project)
             $('.projects-section').append($projectDiv3)
         })
     }
-
 
 
 //Contact Section
@@ -388,11 +438,17 @@ $linkedinFooterLink.css('text-align', 'left').css('color','blue');
 
 let responsive = () => {
     if(window.matchMedia('(min-width: 992px)').matches){
-        $('p').css('font-size','12px').css('color','red');
+        $('p').css('font-size','12px');
+        //$projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
+        $skillDivContainer.css('display','flex').css('flex-direction','row').css('justify-content','center');
     } else if(window.matchMedia('(max-width: 768px)').matches){
-        $('p').css('font-size','24px').css('color','black');
+        $('p').css('font-size','24px');
+        //$projects.css('display','flex').css('flex-direction','column').css('align-items','center');
+        $skillDivContainer.css('display','flex').css('flex-direction','column').css('align-items','center');
     }else{
-        $('p').css('font-size','18px').css('color','blue');
+        $('p').css('font-size','18px');
+        //$projects.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
+        $skillDivContainer.css('display','flex').css('flex-direction','row').css('justify-content','center');
     }
 };
 
@@ -400,6 +456,8 @@ let responsive = () => {
 
 
 responsive();
+
+window.addEventListener('resize',responsive,false);
 
 
 
