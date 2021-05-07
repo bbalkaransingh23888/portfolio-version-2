@@ -13,7 +13,7 @@ const $profilePic = $('<img>').attr('src', 'https://res.cloudinary.com/lonewolf2
 const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaransingh. I am a Fullstack Software Engineer');
 
 //Dark Mode Function (had to split into two different buttons)
-const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('background-color','black').css('color','#dc143c').css('border','2px solid gold').click(function() {
+const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('width','40%').css('margin-left','5%').css('margin-right','5%').css('background-color','black').css('color','#dc143c').css('border','2px solid gold').click(function() {
         $lightMode.css('cursor','disabled');
         $('body').css('background-color','black');
         $navMenu.css('background-color','#333333').css('color','black');
@@ -48,7 +48,7 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('back
         $("h4").css('background-color','#333333');
         $footer.css('background-color','#333333')
 });
-const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('background-color','#333333').css('color','#dc143c').css('border','2px solid gold').click(function() {
+const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('width','40%').css('margin-left','5%').css('margin-right','5%').css('background-color','#333333').css('color','#dc143c').css('border','2px solid gold').click(function() {
         $darkMode.css('cursor','disabled');
         $('body').css('background-color','#c0c0c0');
         $navMenu.css('background-color','black').css('color','#c0c0c0');
@@ -135,7 +135,7 @@ const $a5 = $('<a>').addClass('navItem').css('display','none').text(' Contact Me
 //About Me Variables
 const $aboutMeDiv = $('<div>').addClass('aboutMe');
 const $aboutMeHeading = $('<h2>').text('About Me');
-const $aboutMeContent = $('<p>').text('I am a self-starting, fast-learning videogame nerd looking to jumpstart a software engineering career following stints in sales and finance. I am analytical yet creative and a versatile team-player. I am ambitious, hard-working, enjoy acquiring new skills, and possess strong problem solving skills. I strive to be the best version of myself, to be better than my previous self, and derive joy from the sense of accomplishment of completing a task. I am a health-nut who enjoys travelling; sports; nature; and my family, friends, and dog.');
+const $aboutMeContent = $('<p>').text('I am a self-starting, fast-learning videogame nerd looking to jumpstart a software engineering career following stints in sales and finance. I am analytical yet creative and a versatile team-player. I am ambitious, hard-working, enjoy acquiring new skills, and possess strong problem solving skills. I strive to be the best version of myself, to be better than my previous self, and derive joy from the sense of accomplishment of completing a task. I am a health-nut who enjoys travelling; sports; nature; and my family, friends, and dog.').css('width','80%').css('margin-left','10%').css('margin-right','10%');
 const $resume = $('<button>').text('Resume').click(function(){
     //window.alert('You clicked on my Resume!') // test function
     onclick=window.open('https://drive.google.com/file/d/1vWg65iWrUhfqduGKU9OnHacWUcYKBj-A/view?usp=sharing', '_blank');
@@ -151,6 +151,8 @@ $aboutMeDiv.append($aboutMeHeading);
 $aboutMeDiv.append($aboutMeContent);
 $aboutMeDiv.append($resume);
 
+$resume.css('display','inline').css('margin','10%').css('width','80%');
+
 
 //Sites Section
 //Sites Variables
@@ -165,6 +167,9 @@ const $gitHub = $('<button>').text('GitHub').click(function(){
 
 $sitesHeader.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 
+$linkedIn.css('width','40%').css('margin-left','5%').css('margin-right','5%');
+$gitHub.css('width','40%').css('margin-left','5%').css('margin-right','5%');
+
 //Append the sites div elements to the site HTML
 $('body').append($sitesDiv);
 $sitesDiv.append($sitesHeader);
@@ -174,11 +179,11 @@ $sitesDiv.append($gitHub);
 //Skills Section
 //Skills Variables
 const $skillsDiv = $('<div>').addClass('skills');
-const $skillDivContainer = $('<div>').addClass('skills-container').css('width','80%');
+const $skillDivContainer = $('<div>').addClass('skills-container');//.css('width','80%');
 const $skillsDivHeader = $('<h2>').text('Skills').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center').css('font-size','50px');
-const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('background-color','black').css('color','#dc143c').addClass('skillsTitle');
-const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases').css('background-color','black').css('color','#dc143c').addClass('skillsTitle');
-const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('background-color','black').css('color','#dc143c').addClass('skillsTitle');
+const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('color','#dc143c').addClass('skillsTitle');
+const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases').css('color','#dc143c').addClass('skillsTitle');
+const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('color','#dc143c').addClass('skillsTitle');
 const $languageMiniDiv = $('<div>').addClass('languages');
 const $frameworkAndDBsMiniDiv = $('<div>').addClass('frameworksAndDatabases').css('color','black');
 const $knowledgeMiniDiv = $('<div>').addClass('knowledge').css('color','black');
@@ -215,7 +220,8 @@ $('body').append($skillsDiv);
 $skillsDiv.append($skillDivContainer);
 $skillsDiv.prepend($skillsDivHeader);
 //Languages Mini Section
-$skillDivContainer.append($languageMiniDiv).css('border','2px solid black').css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+$skillDivContainer.append($languageMiniDiv)
+$languageMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
 $languageMiniDiv.append($languageHeader);
 $languageMiniDiv.append($languageList);
 $languageList.append($htmlItem);
@@ -224,7 +230,8 @@ $languageList.append($javaScriptItem);
 $languageList.append($rubyItem);
 $languageList.append($pythonItem);
 //Frameworks and Databases Mini Section
-$skillDivContainer.append($frameworkAndDBsMiniDiv).css('border','2px solid black');
+$skillDivContainer.append($frameworkAndDBsMiniDiv);
+$frameworkAndDBsMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
 $frameworkAndDBsMiniDiv.append($frameworkHeader);
 $frameworkAndDBsMiniDiv.append($frameworkAndDBsList);
 $frameworkAndDBsList.append($jQueryItem);
@@ -239,8 +246,9 @@ $frameworkAndDBsList.append($rubyOnRailsItem);
 $frameworkAndDBsList.append($mySQLItem);
 $frameworkAndDBsList.append($djangoItem);
 //Knowledge Mini Section
-$skillDivContainer.append($knowledgeMiniDiv).css('border','2px solid black');
+$skillDivContainer.append($knowledgeMiniDiv);
 $knowledgeMiniDiv.append($knowledgeHeader);
+$knowledgeMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
 $knowledgeMiniDiv.append($knowledgeList);
 $knowledgeList.append($oopItem);
 $knowledgeList.append($restAPIItem);
@@ -258,7 +266,7 @@ $knowledgeList.append($frontendDeploymentItem);
 //projects variables
 const $projectHeader = $('<h2>').text('Projects').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 const $projectSection = $('<div>').addClass('projects-section');
-const $projects = $('<div>').addClass('projects').css('border','1px solid black');
+const $projects = $('<div>').addClass('projects');
 
 $projectHeader.css('font-size','50px')
 
@@ -296,26 +304,15 @@ fetch(url)
   const app = (data) => {
         const createProjectElement = (project) => {
             const $projectDiv2 = $('<div>').addClass('project-box');
-            // let projectBoxMedia = function() {
-            //     if(window.matchMedia('(min-width: 992px)').matches){
-            //         $projectDiv2.css('1px solid blue').css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
-            //     } else if(window.matchMedia('(max-width: 768px)').matches){
-            //         $projectDiv2.css('1px solid blue').css('display','flex').css('flex-direction','column');
-            //     }else{
-            //         $projectDiv2.css('1px solid blue').css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
-            //     }
-            // };
-            // projectBoxMedia();
-            // window.addEventListener('resize',projectBoxMedia,false);
             
             const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px');
             let headerMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
-                    $projectHeader2.css('font-size','25px').css('background-color','#c0c0c0').css('width','80%');
+                    $projectHeader2.css('width','200px').css('text-align','center').css('font-size','25px').css('background-color','#c0c0c0');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
-                    $projectHeader2.css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px');
+                    $projectHeader2.css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px').css('width','100%');
                 }else{
-                    $projectHeader2.css('font-size','25px').css('background-color','black').css('width','80%');
+                    $projectHeader2.css('width','192px').css('text-align','center').css('font-size','25px').css('background-color','black');
                 }
             };
             headerMedia();
@@ -341,7 +338,7 @@ fetch(url)
                 if(window.matchMedia('(min-width: 992px)').matches){
                     $projectLink.css('text-align','center').css('font-size','18px').css('width','130px').css('margin-left','5%').css('margin-right','5%');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
-                    $projectLink.css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20%').css('margin-right','20%').css('border','2px solid gold');
+                    $projectLink.css('width','40%').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','5%').css('margin-right','5%').css('border','2px solid gold');
                 }else{
                     $projectLink.css('width','40%').css('margin','10px 5%').css('text-align','center').css('font-size','21px');
                 }
@@ -356,7 +353,7 @@ fetch(url)
                 if(window.matchMedia('(min-width: 992px)').matches){
                     $projectRepo.css('text-align','center').css('font-size','18px').css('width','130px').css('margin-left','5%').css('margin-right','5%');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
-                    $projectRepo.css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','20%').css('margin-right','20%').css('border','2px solid gold');
+                    $projectRepo.css('width','40%').css('text-align','center').css('font-size','24px').css('color','#dc143c').css('background-color','black').css('margin-left','5%').css('margin-right','5%').css('border','2px solid gold');
                 }else{
                     $projectRepo.css('width','40%').css('margin','10px 5%').css('text-align','center').css('font-size','21px');
                 }
@@ -416,10 +413,9 @@ const $footer = $('<footer>');
 const $socialMediaP = $('<p>').addClass('footer');
 const $linkedinFooterLink = $('<a>').attr('href', 'https://www.linkedin.com/in/brandon-balkaransingh23/').attr('target','_blank').text('LinkedIn');
 const $gitHubPortfolioRepo = $('<a>').attr('href','https://github.com/bbalkaransingh23888/portfolio-version-2').attr('target','_blank').text('Repo for this site');
-//const $linkedinFooterSymbol = $('<i>').addClass('fab fa-linkedin');
 $('body').append($footer);
 $footer.append($socialMediaP);
-$socialMediaP.append($linkedinFooterLink); //.append($linkedinFooterSymbol);
+$socialMediaP.append($linkedinFooterLink); 
 $socialMediaP.append($gitHubPortfolioRepo);
 
 
@@ -464,15 +460,33 @@ let responsive = () => {
     if(window.matchMedia('(min-width: 992px)').matches){
         $('p').css('font-size','12px');
         $skillDivContainer.css('display','flex').css('flex-direction','row').css('justify-content','center');
-        $projectSection.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
+        $languageMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $frameworkAndDBsMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $knowledgeMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $languageHeader.css('background-color','#c0c0c0');
+        $frameworkHeader.css('background-color','#c0c0c0');
+        $knowledgeHeader.css('background-color','#c0c0c0');
+        $projectSection.css('margin','20px').css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
     } else if(window.matchMedia('(max-width: 768px)').matches){
         $('p').css('font-size','24px');
-        $skillDivContainer.css('display','flex').css('flex-direction','column').css('align-items','center');
-        $projectSection.css('display','flex').css('flex-direction','column');
+        $skillDivContainer.css('display','flex').css('flex-direction','column');
+        $languageMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $frameworkAndDBsMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $knowledgeMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $languageHeader.css('background-color','black');
+        $frameworkHeader.css('background-color','black');
+        $knowledgeHeader.css('background-color','black');
+        $projectSection.css('margin-top','5px').css('margin-bottom','5px').css('display','flex').css('flex-direction','column');
     }else{
         $('p').css('font-size','18px');
         $skillDivContainer.css('display','flex').css('flex-direction','row').css('justify-content','center');
-        $projectSection.css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
+        $languageMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $frameworkAndDBsMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $knowledgeMiniDiv.css('display','flex').css('flex-direction','column').css('align-items','center').css('text-align','center').css('margin','0 auto');
+        $languageHeader.css('background-color','black');
+        $frameworkHeader.css('background-color','black');
+        $knowledgeHeader.css('background-color','black');
+        $projectSection.css('margin','20px').css('display','flex').css('flex-direction','row').css('flex-wrap','wrap');
     }
 };
 
