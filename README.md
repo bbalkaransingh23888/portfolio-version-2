@@ -7,17 +7,6 @@ Project Description: This site is a newer version of the portfolio I made previo
 Project link: 
 GitHub Repo: https://github.com/bbalkaransingh23888/portfolio-version-2.git
 
-Wireframe:
-Mobile Wireframe: !['Mobile Wireframe'](images/image2.jpeg)
- 
-
-Tablet Wireframe: !['Tablet Wireframe'](images/image3.jpeg)
- 
-
-Desktop Wireframe: !['Desktop Wireframe'](images/image4.jpeg)
- 
-
-Time-Priority Index: !['Time/Priority Index'](images/image1.jpeg)
  
 MVP list:
 1)	Interactive Buttons to navigate the page
