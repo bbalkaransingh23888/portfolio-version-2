@@ -116,19 +116,49 @@ $navMenu.append($hamburger);
 
 //create the list items that will make up the navigation menu
 const $a = $('<a>').addClass('navItem').css('display','none').text('About me '); $navMenu.append($a); $a.click(function() {
-    window.scrollBy(0,480)
+    if(window.matchMedia('(min-width: 992px)').matches) {
+        window.scrollBy(0,400)
+    }else if(window.matchMedia('(max-width: 768px)').matches){
+        window.scrollBy(0,320)
+    }else{
+        window.scrollBy(0,360)
+    }
 }); 
 const $a2 = $('<a>').addClass('navItem').css('display','none').text(' Sites '); $navMenu.append($a2); $a2.click(function() {
-    window.scrollBy(0,1000)
+    if(window.matchMedia('(min-width: 992px)').matches) {
+        window.scrollBy(0,600)
+    }else if(window.matchMedia('(max-width: 768px)').matches){
+        window.scrollBy(0,900)
+    }else{
+        window.scrollBy(0,650)
+    }
 });
 const $a3 = $('<a>').addClass('navItem').css('display','none').text(' Skills'); $navMenu.append($a3); $a3.click(function() {
-    window.scrollBy(0,1150)
+    if(window.matchMedia('(min-width: 992px)').matches) {
+        window.scrollBy(0,850)
+    }else if(window.matchMedia('(max-width: 768px)').matches){
+        window.scrollBy(0,1150)
+    }else{
+        window.scrollBy(0,900)
+    }
 });
 const $a4 = $('<a>').addClass('navItem').css('display','none').text(' Projects '); $navMenu.append($a4); $a4.click(function() {
-    window.scrollBy(0,2200)
+    if(window.matchMedia('(min-width: 992px)').matches) {
+        window.scrollBy(0,1300)
+    }else if(window.matchMedia('(max-width: 768px)').matches){
+        window.scrollBy(0,2200)
+    }else{
+        window.scrollBy(0,1300)
+    }
 });
 const $a5 = $('<a>').addClass('navItem').css('display','none').text(' Contact Me '); $navMenu.append($a5); $a5.click(function() {
-    window.scrollBy(0,7000)
+    if(window.matchMedia('(min-width: 992px)').matches) {
+        window.scrollBy(0,2300)
+    }else if(window.matchMedia('(max-width: 768px)').matches){
+        window.scrollBy(0,5750)
+    }else{
+        window.scrollBy(0,2500)
+    }
 });
 
 //About Me Section
