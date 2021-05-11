@@ -168,7 +168,7 @@ const $aboutMeHeading = $('<h2>').text('About Me');
 const $aboutMeContent = $('<p>').text('I am a self-starting, fast-learning videogame nerd looking to jumpstart a software engineering career following stints in sales and finance. I am analytical yet creative and a versatile team-player. I am ambitious, hard-working, enjoy acquiring new skills, and possess strong problem solving skills. I strive to be the best version of myself, to be better than my previous self, and derive joy from the sense of accomplishment of completing a task. I am a health-nut who enjoys travelling; sports; nature; and my family, friends, and dog.').css('width','80%').css('margin-left','10%').css('margin-right','10%');
 const $resume = $('<button>').text('Resume').click(function(){
     //window.alert('You clicked on my Resume!') // test function
-    onclick=window.open('https://drive.google.com/file/d/1vWg65iWrUhfqduGKU9OnHacWUcYKBj-A/view?usp=sharing', '_blank');
+    onclick=window.open('https://drive.google.com/file/d/1i3svmHkR1sZUG3Rcvz4M4eDe8_AtXm1z/view?usp=sharing', '_blank');
 });
 
 $aboutMeDiv.css('align-items','center');
