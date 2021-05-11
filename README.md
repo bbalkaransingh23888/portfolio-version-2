@@ -12,7 +12,7 @@ MVP list:
 1)	Interactive Buttons to navigate the page
 2)	Display adaptation for different screen sizes (mobile, tablet, and desktop views); Hamburger menu for the mobile display
 3)	‘About Me’, ‘Projects’, ‘Contact’, and ‘Sites’ section in addition to brief introduction page
-4)	Program the HTML to be loaded in via the DOM??
+4)	Program the HTML to be loaded in via the DOM (jQuery)
 5)	Flexbox and Grid for CSS
 6)	‘About Me’ includes info. about who I am, work I’ve done, background, hobbies, etc.
 7)	‘Projects’ section includes links to the projects as well as a small preview window thing…whatever that’s called
@@ -44,10 +44,10 @@ MVP:
 |‘Contact’|Medium|2 Hrs.|2 Hrs.|2 Hrs.|		
 |‘Sites’|Medium|2 Hrs.|1 Hr.|1 Hr.| 		
 |Google Pull Projects from API and email registry for google sheet|HIGH|4 Hrs.|1.5 Hrs.|1.5 Hrs.|		
-|DOM programming|High|3 Hrs.|3 Hrs.|3 Hrs.|		
-|Grid & Flexbox for CSS|Medium|2 Hrs.|4 Hrs.|4 Hrs.|		
+|DOM programming (jQuery)|High|3 Hrs.|3 Hrs.|3 Hrs.|		
+|Grid & Flexbox for CSS (jQuery)|Medium|2 Hrs.|4 Hrs.|4 Hrs.|		
 |Deployed to Netlify|Low|1 Hr.|.5 hr.|.5 hr.|		
-|Basic HTML & CSS|Low|1 Hr.|.5 hr.|.5 hr.|
+|Basic HTML & CSS (using jQuery)|Low|1 Hr.|.5 hr.|.5 hr.|
 |Dark Mode and Light Mode|High|4 Hrs.|2 Hrs.|2 Hrs.|
 |Nothing but jQuery|High|8 Hrs.|10 Hrs.|10 Hrs.|		
 |TOTAL|High|40 Hrs.|36.5 Hrs.|36.5 Hrs.| 		
@@ -58,4 +58,5 @@ Post-MVP:
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
 |Social Media Links & Icons|Low|1 Hr.|1 Hr.|1 Hr.(ongoing)|
+|Create new Blog and add to Portfolio|Low|1 Hr.|n/a|n/a|
 
