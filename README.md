@@ -4,8 +4,9 @@ Project Worksheet – Portfolio Site Version 2
 
 Project Description: This site is a newer version of the portfolio I made previously. I intend for this one to be created using jQuery by itself. I also want to add some new features such as a Dark Mode. There will be a link to my previous Portfolio as well as GitHub Links to both repos so that anyone who stumbles upon this site can compare the code between the two. My hope is that this can highlight my growth over the past several months. 
 
-Project link: 
+Project link: https://bbalkaransingh23888proportfoliov2.netlify.app/
 GitHub Repo: https://github.com/bbalkaransingh23888/portfolio-version-2.git
+Wifreframes (I used the same design as my previous portfolio): https://github.com/bbalkaransingh23888/Project_1_Portfolio.git
 
  
 MVP list:
