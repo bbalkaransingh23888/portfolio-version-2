@@ -9,7 +9,7 @@
 //Welcome/Intro Variables
 const $h1 = $('<h1>').addClass('welcomeMessage').text("Welcome to my Portfolio Site!");
 const $welcomeDiv = $('<div>').addClass('welcome');
-const $profilePic = $('<img>').attr('src', 'https://res.cloudinary.com/lonewolf23/image/upload/v1619376681/IMG_3219_ohaedw.png').attr('alt', 'my profile pic');
+const $profilePic = $('<img>').attr('src', 'https://res.cloudinary.com/lonewolf23/image/upload/v1620786872/IMG_0977_uk2yek.jpg').attr('alt', 'my profile pic');
 const $introP = $('<p>').addClass('intro').text('Hi, my name is Brandon Balkaransingh. I am a Fullstack Software Engineer');
 
 //Dark Mode Function (had to split into two different buttons)
