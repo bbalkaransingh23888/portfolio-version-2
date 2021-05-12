@@ -452,7 +452,7 @@ $socialMediaP.append($gitHubPortfolioRepo);
 // CSS jQuery
 $('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif").css('padding','0').css('margin','0').css('height','0').css('position','relative');
 $h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
-$profilePic.css('height', '150px').css('width', '100px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
+$profilePic.css('height', '300px').css('width', '200px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center').css('font-size','24px');
 $navMenu.css('color','#C0C0C0').css('display','flex').css('flex-direction','column').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
 $a.css('transition','background-color .5s, color .5s').hover(function(){
