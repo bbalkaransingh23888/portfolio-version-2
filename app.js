@@ -28,19 +28,19 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('widt
         $("li").css('color','#c0c0c0');
         $('.navItem').css('color','#c0c0c0');
         $a.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
         $a2.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
         $a3.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
         $a4.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
         $a5.css('color','white').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","#333333").css('color','white')});
         $languageMiniDiv.css('color','#c0c0c0');
         $frameworkAndDBsMiniDiv.css('color','#c0c0c0');
@@ -63,19 +63,19 @@ const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('w
         $("li").css('color','black');
         $('.navItem').css('color','black');
         $a.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $a2.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $a3.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $a4.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $a5.css('color','#c0c0c0').css('transition','background-color .5s, color .5s').hover(function(){
-            $(this).css('background-color','#dc143c').css('color','white');
+            $(this).css('background-color','#c21807').css('color','white');
         }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});;
         $languageMiniDiv.css('color','black');
         $frameworkAndDBsMiniDiv.css('color','black');
@@ -172,7 +172,7 @@ const $resume = $('<button>').text('Resume').click(function(){
 });
 
 $aboutMeDiv.css('align-items','center');
-$aboutMeHeading.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
+$aboutMeHeading.css('font-size','50px').css('color','#c21807').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 $aboutMeContent.css('text-align','center').css('font-size','24px');
 
 //Append About Me elements to HTML file - Created using jQuery
@@ -195,7 +195,7 @@ const $gitHub = $('<button>').text('GitHub').click(function(){
     window.open('https://github.com/bbalkaransingh23888', '_blank')
 });
 
-$sitesHeader.css('font-size','50px').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
+$sitesHeader.css('font-size','50px').css('color','#c21807').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 
 $linkedIn.css('width','40%').css('margin-left','5%').css('margin-right','5%');
 $gitHub.css('width','40%').css('margin-left','5%').css('margin-right','5%');
@@ -209,11 +209,11 @@ $sitesDiv.append($gitHub);
 //Skills Section
 //Skills Variables
 const $skillsDiv = $('<div>').addClass('skills');
-const $skillDivContainer = $('<div>').addClass('skills-container');//.css('width','80%');
-const $skillsDivHeader = $('<h2>').text('Skills').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center').css('font-size','50px');
-const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('color','#dc143c').addClass('skillsTitle');
+const $skillDivContainer = $('<div>').addClass('skills-container');
+const $skillsDivHeader = $('<h2>').text('Skills').css('color','#c21807').css('font-family',"'Secular One', sans-serif").css('text-align','center').css('font-size','50px');
+const $languageHeader = $('<h4>').addClass('language-header').text('Languages').css('color','#c21807').addClass('skillsTitle');
 const $frameworkHeader = $('<h4>').addClass('framework-and-databases-header').text('Frameworks and Databases').css('color','#dc143c').addClass('skillsTitle');
-const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('color','#dc143c').addClass('skillsTitle');
+const $knowledgeHeader = $('<h4>').addClass('knowledge-header').text('Knowledge').css('color','#c21807').addClass('skillsTitle');
 const $languageMiniDiv = $('<div>').addClass('languages');
 const $frameworkAndDBsMiniDiv = $('<div>').addClass('frameworksAndDatabases').css('color','black');
 const $knowledgeMiniDiv = $('<div>').addClass('knowledge').css('color','black');
@@ -294,11 +294,11 @@ $knowledgeList.append($frontendDeploymentItem);
 
 //Project section
 //projects variables
-const $projectHeader = $('<h2>').text('Projects').css('color','#dc143c').css('font-family',"'Secular One', sans-serif").css('text-align','center');
+const $projectHeader = $('<h2>').text('Projects').css('color','#c21807').css('font-family',"'Secular One', sans-serif").css('text-align','center');
 const $projectSection = $('<div>').addClass('projects-section');
 const $projects = $('<div>').addClass('projects');
 
-$projectHeader.css('font-size','50px')
+$projectHeader.css('font-size','50px');
 
 //Append project section to the body, then projects to project section
 $('body').append($projectHeader);
@@ -335,12 +335,12 @@ fetch(url)
         const createProjectElement = (project) => {
             const $projectDiv2 = $('<div>').addClass('project-box');
             
-            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px');
+            const $projectHeader2 = $('<h4>').attr('class', 'project-header').text(project.title).css('text-align','center').css('color','#c21807').css('background-color','black').css('font-size','32px');
             let headerMedia = function(){
                 if(window.matchMedia('(min-width: 992px)').matches){
                     $projectHeader2.css('width','200px').css('text-align','center').css('font-size','25px').css('background-color','#c0c0c0');
                 } else if(window.matchMedia('(max-width: 768px)').matches){
-                    $projectHeader2.css('text-align','center').css('color','#dc143c').css('background-color','black').css('font-size','32px').css('width','100%');
+                    $projectHeader2.css('text-align','center').css('color','#c21807').css('background-color','black').css('font-size','32px').css('width','100%');
                 }else{
                     $projectHeader2.css('width','192px').css('text-align','center').css('font-size','25px').css('background-color','black');
                 }
@@ -451,32 +451,32 @@ $socialMediaP.append($gitHubPortfolioRepo);
 
 // CSS jQuery
 $('body').css('background-color','#C0C0C0').css('color','black').css('font-family', "'Secular One', sans-serif").css('padding','0').css('margin','0').css('height','0').css('position','relative');
-$h1.css('color', '#dc143c').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
+$h1.css('color', '#c21807').css('font-size', '65px').css('background-color', 'black').css('border', '5px solid gold').css('text-align', 'center').css('font-family', "'Secular One', sans-serif");
 $profilePic.css('height', '300px').css('width', '200px').css('display', 'block').css('margin', '0 auto').css('border', '3px solid gold');
 $introP.css('text-align', 'center').css('font-size','24px');
 $navMenu.css('color','#C0C0C0').css('display','flex').css('flex-direction','column').css('width','100%').css('min-width','320px').css('background-color','black').css('justify-content','space-between').css('margin','10px auto').css('border','2px solid gold');
 $a.css('transition','background-color .5s, color .5s').hover(function(){
-    $(this).css('background-color','#dc143c').css('color','white');
+    $(this).css('background-color','#c21807').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $a2.css('transition','background-color .5s, color .5s').hover(function(){
-    $(this).css('background-color','#dc143c').css('color','white');
+    $(this).css('background-color','#c21807').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $a3.css('transition','background-color .5s, color .5s').hover(function(){
-    $(this).css('background-color','#dc143c').css('color','white');
+    $(this).css('background-color','#c21807').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $a4.css('transition','background-color .5s, color .5s').hover(function(){
-    $(this).css('background-color','#dc143c').css('color','white');
+    $(this).css('background-color','#c21807').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $a5.css('transition','background-color .5s, color .5s').hover(function(){
-    $(this).css('background-color','#dc143c').css('color','white');
+    $(this).css('background-color','#c21807').css('color','white');
 }, function(){$(this).css("background-color","black").css('color','#c0c0c0')});
 $hamburger.css('color','gold').css('font-size','24px');
 
 $aboutMeContent.css('color','black');
 
-$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('text-align','center').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
-$linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#dc143c').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
-$gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#dc143c').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
+$resume.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#c21807').css('text-align','center').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
+$linkedIn.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color', '#c21807').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
+$gitHub.css('display', 'inline').css('margin','15px').css('background-color','black').css('border','2px solid gold').css('color','#c21807').css('font-size','24px').css('text-decoration','underline').css('cursor','pointer');
 $iframe.css('width','250px').css('height','400px').css('position','relative').css('margin','0 auto').css('display','inline-flex').css('top','200px').css('left','50%').css('-ms-transform','translate(-50%,-50%)').css('transform','translate(-50%,-50%)');
 $projectSection.css('display','flex').css('flex-direction','column');
 
