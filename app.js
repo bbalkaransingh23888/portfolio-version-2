@@ -313,7 +313,7 @@ const url = 'https://v1.nocodeapi.com/lonewolf23/google_sheets/BybMEvGJgIPBMgKY?
 //takes our url and get json data from it
 fetch(url)
     // make sure our response is converted to a json format
-  .then(response => response.json())
+  .then(response => response.text())
   // take that data and perform following things (lines 10-20ish) on it
   .then(data => {
 
