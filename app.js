@@ -45,15 +45,15 @@ const $darkMode = $('<button>').addClass('darkMode').text('Dark Mode').css('widt
         $languageMiniDiv.css('color','#c0c0c0');
         $frameworkAndDBsMiniDiv.css('color','#c0c0c0');
         $knowledgeMiniDiv.css('color','#c0c0c0');
-        $("h4").css('background-color','#333333');
-        $footer.css('background-color','#333333')
+        $("h4").css('background-color','black');
+        $footer.css('background-color','black');
 });
 const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('width','40%').css('margin-left','5%').css('margin-right','5%').css('background-color','#333333').css('color','#dc143c').css('border','2px solid gold').click(function() {
         $darkMode.css('cursor','disabled');
         $('body').css('background-color','#c0c0c0');
         $navMenu.css('background-color','black').css('color','#c0c0c0');
         $h1.css('background-color','black');
-        $("p").css('color','black')
+        $("p").css('color','black');
         $resume.css('background-color','black');
         $linkedIn.css('background-color','black');
         $gitHub.css('background-color','black');
@@ -80,8 +80,8 @@ const $lightMode = $('<button>').addClass('lightMode').text('Light Mode').css('w
         $languageMiniDiv.css('color','black');
         $frameworkAndDBsMiniDiv.css('color','black');
         $knowledgeMiniDiv.css('color','black');
-        $("h4").css('background-color','black');
-        $footer.css('background-color','black');
+        $("h4").css('background-color','#c0c0c0');
+        $footer.css('background-color','#c0c0c0');
 });
 
 //attaching jQuery created elements to Intro div
@@ -305,7 +305,11 @@ $('body').append($projectHeader);
 $('body').append($projectSection);
 $projectSection.append($projects);
 
-const url = 'https://spreadsheets.google.com/feeds/list/1-YSo0tilzPyTV_wXSQqfx_MjTEpFxqZ6dzO3xqVfkAA/od6/public/values?alt=json'
+const url = 'https://sheets.googleapis.com/v4/spreadsheets/1-YSo0tilzPyTV_wXSQqfx_MjTEpFxqZ6dzO3xqVfkAA?includeGridData=false'
+//https://docs.google.com/spreadsheets/d/1anHr8eynPFg2qkquTZYXKetwhTUpxsjBesNl0gNj0yE/edit#gid=0
+//https://spreadsheets.google.com/feeds/list/1anHr8eynPFg2qkquTZYXKetwhTUpxsjBesNl0gNj0yE/od6/public/values?alt=json
+//https://sheets.googleapis.com/v4/spreadsheets/' +spreadsheet_id + '/values/' + tab_name +'?alt=json&key=' + api_key
+
 //takes our url and get json data from it
 fetch(url)
     // make sure our response is converted to a json format
